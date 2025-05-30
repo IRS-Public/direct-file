@@ -1,4 +1,4 @@
- package gov.irs.factgraph.compnodes
+package gov.irs.factgraph.compnodes
 
 import gov.irs.factgraph.{Expression, FactDictionary, Factual}
 import gov.irs.factgraph.definitions.fact.CompNodeConfigTrait
