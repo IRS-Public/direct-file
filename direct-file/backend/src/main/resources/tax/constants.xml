@@ -47,7 +47,6 @@
       <Description>Whether the tax year is a leap year</Description>
       <Derived>
         <Switch>
-          <!-- TODO: replace this with the calc to determine leap year (e.g. divisible by 4, but not 100 unless also divisible by 400) -->
           <Case>
             <When>
               <Equal>
