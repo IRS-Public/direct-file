@@ -30,12 +30,6 @@ public class MessageQueueConfiguration {
     @NotBlank
     private final String region;
 
-    @NotBlank
-    private final String accessKey;
-
-    @NotBlank
-    private final String secretKey;
-
     private final boolean sqsMessageHandlingEnabled;
 
     private final boolean statusChangePublishEnabled;

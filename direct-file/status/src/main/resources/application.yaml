@@ -53,8 +53,6 @@ status:
     pending-submission-queue: pending-submission-queue
     dlq-pending-submission-queue: dlq-pending-submission-queue
     region: us-west-2
-    accessKey: accessKey
-    secretKey: secretKey
     sqs-message-handling-enabled: false
     status-change-publish-enabled: false
   sns:
@@ -77,7 +75,7 @@ status:
 
 aws:
   enabled: false
-  default-credentials-provider-chain-enabled: false
+  default-credentials-provider-chain-enabled: true
   access-key: accessKey
   secret-key: secretKey
 
