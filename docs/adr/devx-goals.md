@@ -4,15 +4,15 @@
 1. Creating a working, running set up of all services should be one command, `docker compose build`. 
 1. Running each service locally should be one command, `./mvnw spring-boot:run -Dspring-boot.run.profiles=development`
 1. Running tests on each service should be one command, `./mvnw test`
-1. Basic IDE settings for intellij and VS Code are checked into the repository, and opening a service or the full `direct-file` repository in these IDEs should "just work". Tests should run in the IDE, local debuggers should work, and there should be no red squigglies or unresolved problems in the IDE.
+1. Basic IDE settings for IntelliJ and VS Code are checked into the repository, and opening a service or the full `direct-file` repository in these IDEs should "just work". Tests should run in the IDE, local debuggers should work, and there should be no red squigglies or unresolved problems in the IDE.
 1. Formatters and linters (e.g. spotless and spotbugs) should standardize formatting, prevent unused variables, enforce styling, and otherwise keep the codebase clean and consistent. CI should check this formatting and linting. 
 1. Code standards are kept via CI tests and robots, not human code reviews. 
 1. We should have a build time of 5 minutes or less for our CI checks.
 1. Environment variables and scripts that require setup outside of our build scripts should be minimal. When environment variables or scripts are required, and are not set, a service should fail immediately and loudly with a helpful error message. 
 1. Making a simple change should be simple and take a short amount of time (e.g. updating a fact graph -> MeF mapping should be 1 line of change)
-1. Similarly, writing a simple test should be simple, and modifying our tests (unit or snpashot) should eb clear and easy. 
+1. Similarly, writing a simple test should be simple, and modifying our tests (unit or snapshot) should be clear and easy. 
 1. Error messages that indicate a problem in environment setup should be clear and simple. 
-1. Error and warn logs should always point to a real and solveable problem. 
+1. Error and warn logs should always point to a real and solvable problem. 
 1. We should not have manual code changes that are derivative of other code (e.g. updating `aliases.ts` for aliased facts).
 1. Any script that is a part of a common dev workflow should be checked + run in CI. 
 
@@ -22,7 +22,7 @@ We're doing great on the first 3 DevX goals!
 
 ## Basic IDE settings
 1. We should check in recommended VS Code settings + plugins for Java Development. 
-1. We should (?) have recommmended settings for Intellij checked in. 
+1. We should (?) have recommended settings for IntelliJ checked in. 
 1. We should fix the bad imports on jaxb sources for the IRS MeF SDK.
 1. We should finish setting up spotbugs across projects, and resolving our existing spotbugs errors. 
 1. We should standardize our linting + formatting tools, and make them run in CI to prevent unresolved problems. 
