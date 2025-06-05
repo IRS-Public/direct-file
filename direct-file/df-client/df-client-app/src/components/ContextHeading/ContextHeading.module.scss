@@ -1,8 +1,0 @@
-@use '@irs/df-common/src/styles/uswds-theme' as *;
-
-.context-heading {
-  color: color('base');
-  font-size: size($theme-body-font-family, 9);
-  font-weight: font-weight('semibold');
-  margin-top: 1.34rem;
-}

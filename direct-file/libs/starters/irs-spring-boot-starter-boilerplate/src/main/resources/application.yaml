@@ -1,7 +1,0 @@
-boilerplate-starter:
-    nested-class-1:
-        property1: nested-class-1-property-1
-    nested-class-2:
-        property1: nested-class-2-property-1
-        property2: nested-class-2-property-2
-        property3: nested-class-2-property-3

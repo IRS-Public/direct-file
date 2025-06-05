@@ -1,7 +1,0 @@
-{
-  "open-enrollment": {
-    "new-users-allowed": true,
-    "max-users": 200000000
-  },
-  "esignature-enabled": true
-}

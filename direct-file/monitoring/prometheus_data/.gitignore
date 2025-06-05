@@ -1,5 +1,0 @@
-# Create directory to keep prometheus metrics between dev restarts
-# but don't commit the tsdb files themselves.
-*
-# Ignore everything except this file
-!.gitignore

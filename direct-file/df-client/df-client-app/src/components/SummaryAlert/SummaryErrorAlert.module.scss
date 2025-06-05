@@ -1,9 +1,0 @@
-@use '@irs/df-common/src/styles/uswds-theme' as *;
-
-:global(.usa-alert) {
-  &.summary-error-alert {
-    &:focus {
-      outline-style: none;
-    }
-  }
-}

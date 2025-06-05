@@ -1,5 +1,0 @@
-**/application-local.*
-.env*
-.git/
-Dockerfile*
-**/target/
