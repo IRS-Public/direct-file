@@ -1,0 +1,45 @@
+name: Run Scala Fact-Graph test suite
+
+on:
+  push:
+    paths:
+      - 'direct-file/backend/**'
+    branches: [main]
+  pull_request:
+    paths:
+      - 'direct-file/backend/**'
+    branches: [main]
+
+jobs:
+  backend-tests:
+    name: Run Scala Backend Tests
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: direct-file/fact-graph-scala
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Cache sbt
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.ivy2/cache
+            ~/.sbt
+            ~/.coursier
+          key: sbt-cache-${{ runner.os }}-${{ hashFiles('backend/**.sbt') }}
+          restore-keys: |
+            sbt-cache-${{ runner.os }}
+    
+      - uses: sbt/setup-sbt@v1
+      - name: Run Scala tests
+        run: sbt test
