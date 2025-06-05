@@ -1,6 +1,0 @@
-version: "3.8"
-services:
-  state-api:
-    entrypoint: ["java","-agentlib:jdwp=transport=dt_socket,address=*:5005,server=y,suspend=n","-jar","/deployments/state-api.jar"]
-    ports:
-      - 5005:5005

@@ -1,5 +1,0 @@
-# Create directory to keep grafana data between dev restarts
-# but don't commit the data files themselves.
-*
-# Ignore everything except this file
-!.gitignore

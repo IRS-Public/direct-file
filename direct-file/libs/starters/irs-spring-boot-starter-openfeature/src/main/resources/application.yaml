@@ -1,5 +1,0 @@
-openfeature-starter:
-    s3-provider:
-        environment-prefix:
-        bucket:
-        expiration: 15m

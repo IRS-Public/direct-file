@@ -1,6 +1,0 @@
-{
-  "key": "publish_dispatch_queue_messages",
-  "payload": {
-    "submissionIds": ["submissionId1", "submissionId2"]
-  }
-}

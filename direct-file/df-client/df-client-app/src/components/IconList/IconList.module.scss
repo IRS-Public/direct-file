@@ -1,7 +1,0 @@
-@use '@irs/df-common/src/styles/uswds-theme' as *;
-
-:global {
-  .usa-prose .usa-alert + .usa-icon-list {
-    margin-top: units(3);
-  }
-}

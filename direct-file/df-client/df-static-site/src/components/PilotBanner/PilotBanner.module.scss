@@ -1,7 +1,0 @@
-@use '@irs/df-common/src/styles/uswds-theme' as *;
-
-.df-pilot-banner {
-  a {
-    @include typeset-link;
-  }
-}

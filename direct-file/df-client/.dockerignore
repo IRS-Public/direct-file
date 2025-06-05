@@ -1,5 +1,0 @@
-sbom.json
-
-**/node_modules
-**/dist
-**/.vscode

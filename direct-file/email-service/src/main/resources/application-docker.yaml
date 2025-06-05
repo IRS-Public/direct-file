@@ -1,7 +1,0 @@
-email-service:
-  messageQueue:
-    endpoint: http://localstack:4566/
-    sqs-message-handling-enabled: true
-spring:
-  datasource:
-    url: jdbc:postgresql://email-service-db:5432/email-db

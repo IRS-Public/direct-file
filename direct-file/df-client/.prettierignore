@@ -1,6 +1,0 @@
-js-factgraph-scala/src/main.js
-*.expected.json
-**/src/**/generated/**
-**/src/test/scenarioTests/jsonScenarios/**
-**/src/test/factDictionaryTests/backend-scenarios/**
-**/src/test/factDictionaryTests/backend-scenarios-ero/**

@@ -1,7 +1,0 @@
-
-direct-file:
-  local-encryption:
-    local-wrapping-key: ${LOCAL_WRAPPING_KEY}
-
-server:
-  port: 8083

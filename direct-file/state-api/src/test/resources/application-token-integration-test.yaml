@@ -1,9 +1,0 @@
-authorization-token:
-  signing-key: GTc+SlI7C7ECPHAhAvIWqn2yAvzAGMVj
-
-direct-file:
-  local-encryption:
-    local-wrapping-key: "wjI02W2sBT1Q9P9iGTqkyEwFme4l04uz7nUYqXsntQU="
-
-aws:
-  enabled: false # test using local encryption key instead of the KMS wrapping key

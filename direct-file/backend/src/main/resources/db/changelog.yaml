@@ -1,7 +1,0 @@
-databaseChangeLog:
-  - preConditions:
-      onFail: HALT
-      onError: HALT
-  - includeAll:
-      path: migrations/
-      relativeToChangelogFile: true
