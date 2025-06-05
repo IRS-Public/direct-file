@@ -22,10 +22,6 @@ const PreviewTaxReturns = () => {
   const handlePreview = useCallback(async () => {
     const url = `${import.meta.env.VITE_BACKEND_URL}v1/taxreturns/${currentTaxReturnId}/preview`;
     const alertKey = SystemAlertKey.PREVIEW;
-    const browserLanguage: string = navigator.language;
-    // TODO: navigator.platform is deprecated: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/platform
-    const platform: string = navigator.platform ? navigator.platform : ``;
-    const timeZoneOffset: number = new Date().getTimezoneOffset();
     const facts = JSON.parse(factGraph.toJSON());
 
     try {

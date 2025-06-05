@@ -10,10 +10,6 @@ import { TaxReturn } from '../../../types/core.js';
  * then trigger any logging on this fetch.
  */
 export async function taxReturnCreate(): Promise<TaxReturn> {
-  const browserLanguage: string = navigator.language;
-  // TODO: navigator.platform is deprecated: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/platform
-  const platform: string = navigator.platform ? navigator.platform : ``;
-  const timeZoneOffset: number = new Date().getTimezoneOffset();
   const year = Number.parseInt(CURRENT_TAX_YEAR);
 
   return await save<TaxReturn>(`${import.meta.env.VITE_BACKEND_URL}v1/taxreturns`, {
