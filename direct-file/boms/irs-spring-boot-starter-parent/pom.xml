@@ -25,7 +25,6 @@
         <aws-sdk.version>2.30.19</aws-sdk.version>
         <!-- https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/setup-project-maven.html#sdk-as-dependency -->
         <directfile-bom.version>0.0.1-SNAPSHOT</directfile-bom.version>
-        <jaxb-api.version>2.3.1</jaxb-api.version>
         <logstash.version>7.4</logstash.version>
         <modelmapper.version>3.1.0</modelmapper.version>
         <modelmapper-module-record.version>1.0.0</modelmapper-module-record.version>
@@ -144,11 +143,6 @@
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
                 <version>${logstash.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>javax.xml.bind</groupId>
-                <artifactId>jaxb-api</artifactId>
-                <version>${jaxb-api.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.pdfbox</groupId>
