@@ -7,7 +7,7 @@
 ## Context and Problem Statement
 
 [//]: # ([Describe the context and problem statement, e.g., in free form using two to three sentences. You may want to articulate the problem in form of a question.])
-A decision was made in [adr-screener-config](./adr-screener-config.md) to use Astro SSG (static site generator) for the screener application. It was initially used for an MVP, and later replaced with React/Vite. This adr is to document that change and supercede the previous adr. 
+A decision was made in [adr-screener-config](./adr-screener-config.md) to use Astro SSG (static site generator) for the screener application. It was initially used for an MVP, and later replaced with React/Vite. This adr is to document that change and supersede the previous adr.
 
 ## Decision Drivers
 
@@ -25,8 +25,8 @@ Chosen option: "React/Vite", because it was consistent with the client app and t
 
     - More dynamic content is an option
     - We can easily utilize react-uswds library.
-    - The i18n system is aligned in both the screener and the client app. 
-    - Engineers don't need to learn multiple systems and can seemlessly develop between the two apps. Onboarding for new engineers is simplified.
+    - The i18n system is aligned in both the screener and the client app.
+    - Engineers don't need to learn multiple systems and can seamlessly develop between the two apps. Onboarding for new engineers is simplified.
 
 ### Negative Consequences
 

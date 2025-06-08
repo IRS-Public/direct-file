@@ -91,7 +91,7 @@ export const useSubmit = () => {
           };
           if (e.apiErrorKey === `signing.retriableEsignatureError`) {
             config.internalLink = `/flow/complete/sign-and-submit/sign-return-intro`;
-            // Remeber that the user has failed electronic signing at least once. The user can still retry but
+            // Remember that the user has failed electronic signing at least once. The user can still retry but
             // if they proceed through the legacy signing flow we'll prefer the legacy /submit endpoint next time.
             dispatch(setElectronicSignatureFailure());
           }

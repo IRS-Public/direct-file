@@ -143,7 +143,7 @@ class TinNodeSpec extends AnyFunSpec:
         assert(fact.get(0) == Result.Complete(Tin("999-99-0000")))
       }
       it("accepts an argument allowing TINs that are all 0's") {
-        // On W-2s, if a filer hasn't recieved a TIN by the time the W-2 is
+        // On W-2s, if a filer hasn't received a TIN by the time the W-2 is
         // printed, the W-2 might have an SSN of 000-00-0000, so we have a flag
         // to allow that
         val dictionary = FactDictionary()

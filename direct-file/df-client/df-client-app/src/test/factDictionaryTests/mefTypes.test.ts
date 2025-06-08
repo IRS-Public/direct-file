@@ -17,8 +17,8 @@ describe(`mefBusinessNameLine1Type`, () => {
     { _testName: `not allowed`, input: `.^$/@!£§ÁÉÍÑÓ×ÚÜáéíñóúü[]`, expected: `` },
     {
       _testName: `special characters`,
-      input: `  San-Diego's #1 Photograpy & Monkey Biz (.*~;/%")  `,
-      expected: `San-Diego's #1 Photograpy & Monkey Biz (*)`,
+      input: `  San-Diego's #1 Photography & Monkey Biz (.*~;/%")  `,
+      expected: `San-Diego's #1 Photography & Monkey Biz (*)`,
     },
   ];
 

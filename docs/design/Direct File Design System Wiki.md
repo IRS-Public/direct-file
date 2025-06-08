@@ -14,9 +14,9 @@ Direct File is built using the [U.S. Web Design System](https://designsystem.dig
 
 # **Taxonomy and Nicknames**
 
-A list of names we use for elements and concepts. 
+A list of names we use for elements and concepts.
 
-For Spanish Translation Glossary see Spanish Glossary Folder in Wiki folder. 
+For Spanish Translation Glossary see Spanish Glossary Folder in Wiki folder.
 
 ## **A**
 
@@ -336,7 +336,7 @@ superseded by the term "Checklist"
 
 # **Information Architecture and tax preparation task flow**
 
-Direct File guides taxpayers through a structured tax preparation task by means of sets of questions. DF is organized according to a hub-and-spoke model, using the Checklist as the hub, with subsections linked directly from there. Subsections operate as short units of work in the larger task and always return the user to the hub to place control over the task in their hands and to regularly ground them in their progress through the larger task.The overall tax preparation task is organized into some high-level notional sections that are numbered on the checklist. Each numbered section is further organized into one or more subsections. Subsections contain the meat of the task: questions and mechanisms for data entry and structures enabling reviews and edits. Direct File has a notion of different subsection types that consist of interactions needed for collecting responses or data from the taxpayer or delivering information. These  types are: question, collection, inner collection, assertion, and review. 
+Direct File guides taxpayers through a structured tax preparation task by means of sets of questions. DF is organized according to a hub-and-spoke model, using the Checklist as the hub, with subsections linked directly from there. Subsections operate as short units of work in the larger task and always return the user to the hub to place control over the task in their hands and to regularly ground them in their progress through the larger task.The overall tax preparation task is organized into some high-level notional sections that are numbered on the checklist. Each numbered section is further organized into one or more subsections. Subsections contain the meat of the task: questions and mechanisms for data entry and structures enabling reviews and edits. Direct File has a notion of different subsection types that consist of interactions needed for collecting responses or data from the taxpayer or delivering information. These  types are: question, collection, inner collection, assertion, and review.
 
 Task flow
 
@@ -442,7 +442,7 @@ DF uses data views, subsection overview pages, to enable interaction with comple
 
 # **Organizing terms (internal)**
 
-Checklist, Section, Subsection, and Hierarchical categories, Data Views 
+Checklist, Section, Subsection, and Hierarchical categories, Data Views
 
 ## **Checklist**
 
@@ -465,7 +465,6 @@ Start or Continue buttons mark where the taxpayer currently is in the overall fl
 Examples of the "start," "continue," and right-caret cues that lead taxpayers through the tasks in the checklist.
 
 <img width="820" alt="Checklist_start_continue" src="https://github.com/user-attachments/assets/f1c639f5-91b2-41e0-af01-36812fa66fa3" />
-
 
 ### **Navigation**
 
@@ -537,7 +536,7 @@ Use this structure for subsections that are composed of nothing more than a coll
 
 C. Inner Collection Subsection (aka Question-Collection Subsection)
 
-Use this structure for subsections that combine a flow of questions with a subcollection (like the Child and Dependent Care Credit, which both asks a sequence of questions and multiple care providers' info). Note that this hierarchy has three levels of review UI, with a top-level data view for the subsection, a collection below that, and then each item's data view below the collection hub. 
+Use this structure for subsections that combine a flow of questions with a subcollection (like the Child and Dependent Care Credit, which both asks a sequence of questions and multiple care providers' info). Note that this hierarchy has three levels of review UI, with a top-level data view for the subsection, a collection below that, and then each item's data view below the collection hub.
 
 ![SUBSECTION_C](https://github.com/user-attachments/assets/4b5de5dd-8111-4d22-b648-c20b726fe102)
 
@@ -579,7 +578,7 @@ Data views are a navigational screen type that summarize the answers for a parti
 
 NOTE: for Assertion subsections, the Assertion screen is the data view because there are no other inputs for which we need to provide edit access.
 
-* Answers on Data views are presented as key-value pairs. There are the content guidelines for how questions and answers should be written in data views.  
+* Answers on Data views are presented as key-value pairs. There are the content guidelines for how questions and answers should be written in data views.
 
 ![Question_Data_view](https://github.com/user-attachments/assets/7bb3339b-0dc5-415b-b857-22b65a6faf87)
 
@@ -617,7 +616,7 @@ Data View Error Hierarchy
 
 Common page types found in Direct File.
 
-Navigational pages: Dashboard, Checklist, Collection hub, Data view, Review and confirm, Account, and Data import. 
+Navigational pages: Dashboard, Checklist, Collection hub, Data view, Review and confirm, Account, and Data import.
 
 ## **Dashboard**
 
@@ -635,7 +634,7 @@ In future years, taxpayers might be able to view (or even interact with) previou
 
 ### **Interaction and behavior**
 
-When a taxpayer signs on to Direct File they will immediately see their dashboard that reads "Welcome to Direct File", provides their email address, and a tax return card. The tax return card is the main component on the dashboard and provides taxpayers with status updates, alerts, tax return ID, summary links, alerts, and next steps. It is also the final card a taxpayer sees once they have submitted tax information through Direct File. 
+When a taxpayer signs on to Direct File they will immediately see their dashboard that reads "Welcome to Direct File", provides their email address, and a tax return card. The tax return card is the main component on the dashboard and provides taxpayers with status updates, alerts, tax return ID, summary links, alerts, and next steps. It is also the final card a taxpayer sees once they have submitted tax information through Direct File.
 
 #### **Added additional page**
 
@@ -664,7 +663,6 @@ Other subsections start with a Collection hub, which allows a taxpayer to report
 ![CollectionHub_1](https://github.com/user-attachments/assets/942c76d3-efb9-4744-aa21-b8920f1c690c)
 
 ![CollectionHub_2](https://github.com/user-attachments/assets/246e0c5b-fd07-4e53-8261-0597e4a44857)
-
 
 These are examples of collection hubs:
 
@@ -700,7 +698,7 @@ Review and confirm has a similar visual style to Data views. It provides "Review
 
 Review and confirm errors
 
-Review and confirm is a section off the Checklist. Its MVP form repeats the checklist and creates value to the user by slowing their task and calling their attention to all remaining errors and warnings before letting them move ahead to signing and submitting. Once all showstoppers are resolved, the TP can confirm and move forward. 
+Review and confirm is a section off the Checklist. Its MVP form repeats the checklist and creates value to the user by slowing their task and calling their attention to all remaining errors and warnings before letting them move ahead to signing and submitting. Once all showstoppers are resolved, the TP can confirm and move forward.
 
 Everything that comes before the Review and confirm section is the meat of the tax return. Anything that comes after is related to getting the tax return to the IRS one way or another.
 
@@ -718,8 +716,8 @@ Account page under the basic header and side menu which helps users identify whe
 
 **Information found under account:**
 
-* How to change your email in ID.me  
-* How to reset your draft and delete submitted returns from your account  
+* How to change your email in ID.me
+* How to reset your draft and delete submitted returns from your account
 * Sign out
 
 <img width="882" alt="Account_wiki_2" src="https://github.com/user-attachments/assets/a3991248-5a9c-4cf2-9b43-bedc27562c50" />
@@ -742,7 +740,7 @@ Section-level introductions details
 
 * Must be evergreen content to serve users working forward through the flow or revisiting the page after having progressed past it
 
-* When a user continues past the section level intro, it will flow into the section's first subsection, but if the user is revisiting the section introduction after having progressed past it, it links back to the checklist; see the checklist pattern 
+* When a user continues past the section level intro, it will flow into the section's first subsection, but if the user is revisiting the section introduction after having progressed past it, it links back to the checklist; see the checklist pattern
 
 ### **About Subsection Introduction screens**
 
@@ -763,7 +761,6 @@ The amount of content on these screens varies. We haven't been strict about the 
 ![Intro_1](https://github.com/user-attachments/assets/a967d5cc-fa61-4bb0-9c34-509b4c067096)
 
 ![Intro_2](https://github.com/user-attachments/assets/a18dc83b-c740-489d-842b-2e0e1a80b186)
-
 
 If there's a lot of information, the intro info could be broken into 2 screens, like for Family and household:
 
@@ -803,7 +800,7 @@ Question screens have just 1 question or instruction, and then form field(s) to 
 
 In the Direct File pilot, the majority of question screens have just 1 form field, to keep each screen simple and focused. Some screens have multiple related form fields, like for contact information.
 
-Many of the questions are required. 
+Many of the questions are required.
 
 ### **Design references**
 
@@ -964,7 +961,7 @@ The Direct File dashboard contains a federal tax return card, which invites taxp
 
 Post-submission tax return statuses are: Submitted, Accepted, Rejected, and resubmitted after rejection. Status alerts are always in bold.
 
-#### **Submitted** 
+#### **Submitted**
 
 Submitted returns will see a tax return card with a blue submitted status alert and offers a link to Tax return details page, submitted downloadable PDF, and next steps with details on payment/refund methods. Taxpayers that must file state taxes will see guidance on filing state taxes.
 
@@ -1017,11 +1014,11 @@ It's not realistic to ask taxpayers about every tax situation we don't support. 
 
 In the Direct File pilot, there's not 1 set pattern for displaying scope flags. There's currently 3 flavors:
 
-* Appear inside snacks, for less common scenarios—Seen in You and your family and Deductions. These snack modals aren't focused on scope, but mention an out-of-scope scenario at some point. Often the snack topics are sensitive or rare (ish), and go into extra detail that most TPs won't need.  
+* Appear inside snacks, for less common scenarios—Seen in You and your family and Deductions. These snack modals aren't focused on scope, but mention an out-of-scope scenario at some point. Often the snack topics are sensitive or rare (ish), and go into extra detail that most TPs won't need.
 ![Scope_flag_modal](https://github.com/user-attachments/assets/be0748a7-e4ea-4568-b56e-0f074fdd1e59)
 
 
-* Appear on the screen in body copy, for more common scenarios—Seen in Credits. These include a mention that some things are out-of-scope on the screen, usually with a snack link for more info. They're displayed as body copy, and are flagging scenarios that could save you money but won't get you in trouble if you get them wrong.  
+* Appear on the screen in body copy, for more common scenarios—Seen in Credits. These include a mention that some things are out-of-scope on the screen, usually with a snack link for more info. They're displayed as body copy, and are flagging scenarios that could save you money but won't get you in trouble if you get them wrong.
 ![Scope_flag_body](https://github.com/user-attachments/assets/9d81665c-8edf-4c20-b183-48a7a9b8587c)
 
 
@@ -1054,7 +1051,7 @@ Tax return alert
 
 A tax return alert is our mechanism for reporting in an assertive way on a problem or situation that calls for timely attention or intervention by the user and pertains to their return's content. The issue's level of consequence can range from moderate to high, but the information presented in an alert is generally reporting on a consequence impactful enough to (1) halt, (2) alter, or (3) endanger the user's ability to reach their end goal: successful filing.
 
-Because of the level of consequence, these messages by definition must be assertive and therefore require a chain of cues (signposts) from UI-to-UI that highlight the issue and lead the user directly to the location in DF where they can review or resolve the condition that prompted the alert.  
+Because of the level of consequence, these messages by definition must be assertive and therefore require a chain of cues (signposts) from UI-to-UI that highlight the issue and lead the user directly to the location in DF where they can review or resolve the condition that prompted the alert.
 
 This definition differentiates the tax return alert from all other info box elements DF may use to explain, nudge, or provide other important information to the user even if the element uses warning or error styling, or status indicators that chain from UI-to-UI (like dependent/qp outcome flags). While those elements may be presented in reds and yellows, they don't meet the definition of tax return alerts.
 
@@ -1070,7 +1067,7 @@ Errors are a forcing function: their behavior compels the user to resolve the co
 
 #### **Special error type: Incompletes**
 
-As DF works today, we force users to fill out all required fields on a page before saving it. Therefore, we don't expect there to be pages that have a mix of complete and incomplete fields. 
+As DF works today, we force users to fill out all required fields on a page before saving it. Therefore, we don't expect there to be pages that have a mix of complete and incomplete fields.
 
 Incomplete questions and collection items should be understood to be errors because they serve a forcing function: the user will be stopped from submitting their return while there are any missing pieces of required information. As errors, they are resolvable entirely in DF: it's a question of completion, which DF can validate.
 
@@ -1100,13 +1097,13 @@ Because such warning alerts might not be resolvable in DF, they might not be som
 
 Warnings don't force the user to resolve them, but they may give the user the opportunity to resolve them by changing answers or manually dismissing the alert. If the warning is at the page level, the user can save and continue or just leave the page by navigating away and they can still continue. If it's on the return level, they can still e-file or proceed on the paper path.
 
-When warnings are used to report on a problem with the correctness of a tax return, it's in the situation where DF can't know if action the user takes in DF actually resolved the problem. This can only be known by submitting the return back to MeF. Or it may be entirely unresolvable in software and require real world action. 
+When warnings are used to report on a problem with the correctness of a tax return, it's in the situation where DF can't know if action the user takes in DF actually resolved the problem. This can only be known by submitting the return back to MeF. Or it may be entirely unresolvable in software and require real world action.
 
 Like error alerts, warning alerts are shown in response to a problem or a condition that the user needs to be aware of and warning alerts cover different levels of consequence: an unresolved warning can have no effect on the user's ability to complete their task or it can result in MeF rejection.
 
 #### **System alert**
 
-System alerts are critical messages DF displays to report on the state of the system or its success or failure executing a task. 
+System alerts are critical messages DF displays to report on the state of the system or its success or failure executing a task.
 
 ### **Interaction and behavior:**
 
@@ -1136,7 +1133,7 @@ Flattest presentation of alerts: Issue types should be presented in the flattest
 
 4. Tax return alert error(s). These are any error that are neither MeF errors or field validation errors (e.g. your date of withdrawal has now passed, or forced-change error message for invalid filing status).
 
-5. Summary of field validation errors (problem with format, required field blank, etc.): combine multiples in one alert block. 
+5. Summary of field validation errors (problem with format, required field blank, etc.): combine multiples in one alert block.
 
 6. MeF rejection return alert warning(s): don't combine, stack.
 
@@ -1146,7 +1143,7 @@ Note: we don't show "resume" prompts on the page level, just dump you on the pag
 
 #### **Reasoning**
 
-System errors above all else: System errors are not caused by the user but it's critical the user have immediate awareness of problems DF is experiencing. It's the highest-priority type of error. 
+System errors above all else: System errors are not caused by the user but it's critical the user have immediate awareness of problems DF is experiencing. It's the highest-priority type of error.
 
 Don't hide other errors or messages if there's a system error: System errors should be shown above all else because they can prevent the user from taking any other action, including resolving other errors that might be reported on the page.  Note that most of the time if there is a system error, it will be a whole-page error and the rest might not render at all. For any cases where such an error shows on a page with other content, it gets a top slot in the structure. We'd want to avoid flashing the other errors on and off in response to anything other than true resolution, so if there is a system error and other alerts, just show them all together stacked up.
 
@@ -1160,15 +1157,15 @@ Flattest presentation of alerts: Issue types should be presented in the flattest
 
 <img width="299" alt="Assertion_section_alert" src="https://github.com/user-attachments/assets/1ef98545-35f0-4b4f-9322-385c97ded294" />
 
-When there is a Filing Status error (this is caused by changes outside the filing status section), the page the user sees is not the section's assertion data view anymore, it's a forced correction screen. 
+When there is a Filing Status error (this is caused by changes outside the filing status section), the page the user sees is not the section's assertion data view anymore, it's a forced correction screen.
 
 Assertion pages like the Amount page especially need a spot for messages because there can be warnings that direct the user to go finish items in other sections (like incomplete income items).
 
 The Credits section has a conditional variation that uses an assertion as its data view instead of its usual data view.  Its assertion variant may not generate errors of its own but still needs slots to display warnings.
 
-#### **Assertion sections** 
+#### **Assertion sections**
 
-Assertion sections don't generally have input pages that will generate field validation errors, but they can generate errors or warnings of their own (like "you need to update your filing status" or someday they may give warnings like "I've changed since you last looked, review me.") 
+Assertion sections don't generally have input pages that will generate field validation errors, but they can generate errors or warnings of their own (like "you need to update your filing status" or someday they may give warnings like "I've changed since you last looked, review me.")
 
 Like any DF page, they need to be able to display errors and warnings.
 
@@ -1178,7 +1175,7 @@ I don't yet foresee any of the current assertion sections getting MeF errors or 
 
 #### **What kinds of alerts will they have?**
 
-The errors and warnings they do display will tend to be explanations about something the TP changed elsewhere in the return that caused or necessitated a change here. 
+The errors and warnings they do display will tend to be explanations about something the TP changed elsewhere in the return that caused or necessitated a change here.
 
 Warnings might include awareness messages like "you have items in progress that may affect this amount. Go finish them."
 
@@ -1250,11 +1247,11 @@ The return status banner is reserved for return-level flags that should be prese
 
 * Your filing method is limited to the paper path
 
-* Knockout state 
+* Knockout state
 
 * Submitted (pending) / Accepted
 
-* Rejected 
+* Rejected
 
 The aggregate summary banner follows these rules:
 
@@ -1320,7 +1317,7 @@ Return status banner
 
 <img width="773" alt="return_status_banner" src="https://github.com/user-attachments/assets/5b778988-e101-4675-970b-5e9dc7be1729" />
 
-This spot is reserved for return-level status flags that should be presented on their own like 
+This spot is reserved for return-level status flags that should be presented on their own like
 
 * In progress
 
@@ -1328,9 +1325,9 @@ This spot is reserved for return-level status flags that should be presented on 
 
 * Knockout state
 
-* Submitted (pending) / Accepted 
+* Submitted (pending) / Accepted
 
-* Rejected 
+* Rejected
 
 * Post-submission errors: a catch all for tax returns that will never reach "accepted" or "rejected" status without DF product intervention. Why? Because MeF doesn't think the federal tax return exists, for example. There may be other errors we encounter after launch.
 

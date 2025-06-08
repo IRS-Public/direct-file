@@ -631,7 +631,7 @@ describe(`EITC eligibility`, () => {
     });
   });
 
-  describe(`Must be ctizen or resident alien all year`, () => {
+  describe(`Must be citizen or resident alien all year`, () => {
     describe(`Single returns`, () => {
       const baseCase = {
         ...filerWithChild,

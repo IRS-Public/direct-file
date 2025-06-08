@@ -11,7 +11,7 @@ import gov.irs.factgraph.types.Dollar
 //
 // [1]: https://www.irs.gov/pub/irs-pdf/f1040.pdf
 //
-// There is a relationship betwen lines 12a, 12b, and 12c. In order to know what
+// There is a relationship between lines 12a, 12b, and 12c. In order to know what
 // should be entered in 12c, we need to first know the values of 12a and 12b.
 //
 // This pattern might remind you of a spreadsheet. If we were to transcribe Form

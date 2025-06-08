@@ -8,7 +8,7 @@ import scala.util.{Try, Success, Failure}
 import gov.irs.factgraph.monads.JSEither
 import gov.irs.factgraph.validation.{ValidationFailure, ValidationFailureReason}
 
-// NOTE: These classes and types are specified just to simplify some front-end logstics
+// NOTE: These classes and types are specified just to simplify some front-end logistics
 // This pattern may need some reconsideration to minimize boilerplate
 
 @JSExportAll

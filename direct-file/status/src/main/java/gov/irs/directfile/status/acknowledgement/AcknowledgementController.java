@@ -80,7 +80,7 @@ public class AcknowledgementController {
                         eventData);
                 return new ResponseEntity<AcknowledgementStatus>(HttpStatus.NOT_FOUND);
             }
-            // this will get logged everytime /status is hit, regardless of whether submissionId is found
+            // this will get logged every time /status is hit, regardless of whether submissionId is found
             addValuesToEventData(eventData, AuditLogElement.mefSubmissionId, submissionId);
             addValuesToEventData(eventData, AuditLogElement.taxReturnId, taxReturnId.toString());
             addValuesToEventData(eventData, AuditLogElement.responseStatusCode, String.valueOf(HttpStatus.OK.value()));
@@ -149,7 +149,7 @@ public class AcknowledgementController {
             MDC.put(AuditLogElement.mefSubmissionId.toString(), submissionId);
             MDC.clear();
 
-            // this will get logged everytime /status is hit, regardless of whether submissionId is found
+            // this will get logged every time /status is hit, regardless of whether submissionId is found
             addValuesToEventData(eventData, AuditLogElement.mefSubmissionId, submissionId);
             addValuesToEventData(eventData, AuditLogElement.responseStatusCode, String.valueOf(HttpStatus.OK.value()));
 

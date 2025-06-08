@@ -16,7 +16,7 @@ informed: "All project technical staff"
 
 In supporting a critical task for all U.S. residents, Direct File should be accessible. This decision record sets a clear target for this phase of development to meet those accessibility needs, and we expect to exceed that target when feasible.
 
-The U.S. describes its accessiblity requirements in [Section 508](https://www.section508.gov/) of the Rehabilitation Act. [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/) provides the same for the internet at large with three levels of compliance (A, AA, AAA), and it has increased in minor versions (2.0, 2.1, 2.2) over the last 15 years. 508 and WCAG have a [very large overlap](https://www.access-board.gov/ict/#E207.2), and all non-overlapping features unique to 508 are either irrelevant to this project (e.g. manual operation and hardware) or out of this repo's scope (e.g. support channels). See the note in "More Information" below for further information.
+The U.S. describes its accessibility requirements in [Section 508](https://www.section508.gov/) of the Rehabilitation Act. [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/) provides the same for the internet at large with three levels of compliance (A, AA, AAA), and it has increased in minor versions (2.0, 2.1, 2.2) over the last 15 years. 508 and WCAG have a [very large overlap](https://www.access-board.gov/ict/#E207.2), and all non-overlapping features unique to 508 are either irrelevant to this project (e.g. manual operation and hardware) or out of this repo's scope (e.g. support channels). See the note in "More Information" below for further information.
 
 Given these equivalencies, all considered options are oriented toward WCAG and achieve 508 compliance.
 
@@ -38,7 +38,7 @@ Chosen option: "WCAG 2.2 AA (forward-thinking)", because it ensures we meet our 
 * Good, because it challenges us to maximize WCAG at level AAA
 * Good, because it sets Direct File up with the latest a11y guidance for years to come
 * Good, because it doesn't require any more work than WCAG 2.1 AA with our current design
-* Neutral, because it may require slighly more work than the bare minimum in the future
+* Neutral, because it may require slightly more work than the bare minimum in the future
 * Neutral, some automated a11y tools don't yet support 2.2 (as of Oct 2023)
 
 ### Confirmation
@@ -65,7 +65,7 @@ This decision to exceed 508 requirements is confirmed by the IRS' 508 Program Of
 * Good, because it establishes and exceeds 508 compliance
 * Good, because it is easy to remember the level expected of all elements (i.e. "what needs level A vs AA?")
 * Good, because it challenges us to maximize WCAG at level AAA
-* Neutral, because it may require slighly more work than the bare minimum
+* Neutral, because it may require slightly more work than the bare minimum
 * Neutral, because it is an outdated version (see "more information" below)
 
 ### WCAG 2.2 AA (forward-thinking)
@@ -75,7 +75,7 @@ This decision to exceed 508 requirements is confirmed by the IRS' 508 Program Of
 * Good, because it challenges us to maximize WCAG at level AAA
 * Good, because it sets Direct File up with the latest a11y guidance for years to come
 * Good, because it doesn't require any more work than WCAG 2.1 AA with our current design
-* Neutral, because it may require slighly more work than the bare minimum in the future
+* Neutral, because it may require slightly more work than the bare minimum in the future
 * Neutral, some automated a11y tools don't yet support 2.2 (as of Oct 2023)
 
 ## More Information

@@ -325,7 +325,7 @@ val graph = Graph(
 graph.get("/tax")
 
 // Note that when the arguments to an operation serve different roles, the
-// operations require us to explicilty label them. So while Add and Multiply can
+// operations require us to explicitly label them. So while Add and Multiply can
 // take arguments in any order, Subtract and Divide use Minuend/Subtrahends and
 // Dividend/Divisors to avoid ambiguity. Similarly, comparison operations like
 // LessThanOrEqual explicitly specify Left and Right.
