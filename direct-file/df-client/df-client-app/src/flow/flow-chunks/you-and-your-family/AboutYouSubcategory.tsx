@@ -575,7 +575,7 @@ export const AboutYouSubcategory = (
       >
         <Heading i18nKey='/heading/you-and-your-family/about-you/will-be-claimed' batches={[`updates-0`]} />
         <InfoDisplay i18nKey='/info/you-and-your-family/about-you/will-be-claimed' batches={[`updates-0`]} />
-        {/* This question is overriden by /taxpayerCannotBeClaimed, so we only let the taxpayer answer it if /taxpayerCannotBeClaimed is false */}
+        {/* This question is overridden by /taxpayerCannotBeClaimed, so we only let the taxpayer answer it if /taxpayerCannotBeClaimed is false */}
         <Boolean
           path='/filers/*/willBeClaimed'
           condition={{ operator: `isFalse`, condition: `/taxpayerCannotBeClaimed` }}

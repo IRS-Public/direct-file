@@ -11,7 +11,7 @@ const twoFilers = {
   },
 };
 
-describe(`MFJ depednents`, () => {
+describe(`MFJ dependents`, () => {
   it(`MFJ dependent because of spouse`, ({ task }) => {
     task.meta.testedFactPaths = [`/isMFJDependent`];
 

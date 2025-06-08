@@ -27,7 +27,7 @@ const Done = () => {
       </Helmet>
       <SubHeader />
       <Breadcrumbs href={PREV} />
-      {/* We are currrently commenting out this ternary operater as we are temporarily removing the 
+      {/* We are currently commenting out this ternary operator as we are temporarily removing the
       "closing soon" state until designers and product have a chance to review this copy */}
       {/* {phase?.showOpenDoneSection ? (
         <>

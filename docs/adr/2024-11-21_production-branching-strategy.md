@@ -55,7 +55,7 @@ The first step is to identify whether the work is destined for the current `prod
 1. Create a PR for changes into `production` branch
 1. Squash and merge PR into `production` branch
 1. Create a second PR from the `production` branch into `main` and resolve conflicts if needed. We are unable to automate this step at this time, but would like to merge into `main` on every PR in order to make the conflict resolution easier.
-   - Note: Regular merge (not "Squash and Merge") is recommended here 
+   - Note: Regular merge (not "Squash and Merge") is recommended here
 
 ##### For future features
 1. Check out `main` branch
@@ -81,7 +81,7 @@ The first step is to identify whether the work is destined for the current `prod
 #### Releases and Deployment
 - Cut releases from `main`
 - Deploy from `main`
-- Reserve a lower environment for regular dpeloyments from `future` for testing future features
+- Reserve a lower environment for regular deployments from `future` for testing future features
 - Continue these two branches throughout the year
 - When it is time to cutover to TY25 (December 2025 or January 2026), fork a new `main` branch from `future` and continue the same processes for the next tax year
 
@@ -94,7 +94,7 @@ The first step is to identify whether the work is destined for the current `prod
 1. Make PR against `main` branch
 1. Merge into `main` branch
 1. Create a second PR from the `main` branch into `future` and resolve conflicts if needed. We are unable to automate this step at this time, but would like to merge into `main` on every PR in order to make the conflict resolution easier.
-   - Note: Regular merge (not "Squash and Merge") is recommended here 
+   - Note: Regular merge (not "Squash and Merge") is recommended here
 
 ##### For future features
 1. Check out `future` branch

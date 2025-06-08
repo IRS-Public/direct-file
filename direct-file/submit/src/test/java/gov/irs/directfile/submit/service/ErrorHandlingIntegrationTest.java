@@ -139,7 +139,7 @@ public class ErrorHandlingIntegrationTest {
         /**
          * This test walks through the workflow of handling a batch of submissions
          * that fails to submit to MeF. Note that submission failure is distinct from a submission being rejected.
-         * A submission failure means some error occured that prevented us from submitting to MeF entirely.
+         * A submission failure means some error occurred that prevented us from submitting to MeF entirely.
          *
          * Flow of this test:
          * 1. Create a Batch that contains 2 submissions

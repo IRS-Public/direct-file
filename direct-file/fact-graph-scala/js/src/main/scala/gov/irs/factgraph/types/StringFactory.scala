@@ -81,7 +81,7 @@ object StringFactory:
         StringFailureReason.InvalidForm1099rBox11Year,
       ),
       MefRatioTypeAsPercentPattern -> (
-        "Invalid characters for pecentage field",
+        "Invalid characters for percentage field",
         StringFailureReason.InvalidMefRatioType,
       ),
     )

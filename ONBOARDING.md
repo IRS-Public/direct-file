@@ -31,7 +31,7 @@ docker compose up -d --build
 The backend application is available at http://localhost:8080 and the postgres database is exposed on port 5432 with username and password `postgres`.
 
 When you're finished, tear it down with `docker compose down`.
- 
+
 
 We typically recommend running the front end components locally instead of through Docker to allow for hot reloading when making changes. Run the following from /direct-file/df-client
 ```bash
@@ -43,7 +43,7 @@ The front end application is available at http://localhost:3000
 # Codebase Overview
 The below provides an introduction to various portions of the codebase. Most applications in our system come with a readme.md to explain what they are for.  Follow the instructions there on how to build.
 > n.b. Most, but not all, of the applications run in docker via running `docker-compose up --build` in the /direct-file directory. In particular, the applications that interact with MeF (status and submit) are read-only and are not included in the docker compose file.
-> 
+>
 > Direct File consists of a frontend React application, a suite of backend Java services, and a shared Scala library that ensures that taxpayers receive accurate error messages and UX flow for the tax rules that apply to them.
 
 #### direct-file
@@ -306,7 +306,7 @@ Most of the project dependencies can be installed using [SDKMAN!](https://sdkman
     ```sh
     docker compose up -d --build
     ```
-    
+
     1. You should see the following (among other) containers start up:
 
         * direct-file-app &mdash; df-client | `df-client`
@@ -427,6 +427,7 @@ cd direct-file/<project>
 ```
 
 To run a test individually, run `./mvnw -Dtest=<Name of Test> test` with the test name. For example:
+
 ```sh
 ./mvnw -Dtest=TaxReturnServiceTest test
 ```
@@ -446,6 +447,5 @@ To run code coverage in any particular app:
 ```sh
  ./mvnw jacoco:report
 ```
+
 To view the generated report, go to `<app_name>/target/site/jacoco/index.html` and open it in a browser.
-
-

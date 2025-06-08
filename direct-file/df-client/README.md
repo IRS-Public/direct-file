@@ -9,7 +9,7 @@
       - [Variables](#variables)
     - [Functions](#functions)
     - [How to set and save facts via the variables](#how-to-set-and-save-facts-via-the-variables)
-    - [Reset the state of facts locally:](#reset-the-state-of-facts-locally)
+    - [Reset the state of facts locally](#reset-the-state-of-facts-locally)
   - [Testing](#testing)
     - [Running fact dictionary tests](#running-fact-dictionary-tests)
   - [Running a prod build locally](#running-a-prod-build-locally)
@@ -45,7 +45,7 @@
      in order to avoid long waits due to network timeouts during fetches. See the [status README](../status/README.md) to get started.
 4. Run `npm install` in df-client directory, to install dependencies
 5. Run `npm run start` in df-client directory, to build the application in development mode
-6. (Optional) If you want to use the psuedo locale instead of Spanish, you can set `VITE_USE_PSEUDO_LOCALE=true` when starting the server.
+6. (Optional) If you want to use the pseudo locale instead of Spanish, you can set `VITE_USE_PSEUDO_LOCALE=true` when starting the server.
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
@@ -121,7 +121,7 @@ In order to access the variables and functions mentioned above, one needs to hav
 5. Run step 3 to see if it's been overwritten.
 6. Load the `about-you-intro` screen again to see the new name appear in the UI.
 
-### Reset the state of facts locally:
+### Reset the state of facts locally
 
 1. Run `debugFactGraph.download()` to save the fact graph into a local text file.
 2. Remove any existing facts you want.

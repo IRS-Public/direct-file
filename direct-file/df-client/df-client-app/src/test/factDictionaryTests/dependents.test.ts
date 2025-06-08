@@ -317,7 +317,7 @@ describe(`Dependent age`, () => {
   });
 });
 
-describe(`Qualifing dependent TIN verification`, () => {
+describe(`Qualifying dependent TIN verification`, () => {
   it(`A dependent has an SSN`, ({ task }) => {
     task.meta.testedFactPaths = [`/familyAndHousehold/*/hasTin`];
     const { factGraph } = setupFactGraphDeprecated({

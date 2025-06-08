@@ -267,7 +267,7 @@ describe(`FlowConfig`, () => {
     }
   });
 
-  it<LocalTestContext>(`collection context can come from subcategory or be overriden by a CollectionLoop`, ({
+  it<LocalTestContext>(`collection context can come from subcategory or be overridden by a CollectionLoop`, ({
     flowConfig,
   }) => {
     for (const screen of flowConfig.screens) {
