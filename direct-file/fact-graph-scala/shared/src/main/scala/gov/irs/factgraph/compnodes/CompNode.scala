@@ -89,6 +89,7 @@ object CompNode:
     LessThanOrEqual,
     Maximum,
     Minimum,
+    Modulo,
     Multiply,
     Not,
     NotEqual,
