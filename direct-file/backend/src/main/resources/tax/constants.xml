@@ -47,27 +47,67 @@
       <Description>Whether the tax year is a leap year</Description>
       <Derived>
         <Switch>
-          <!-- TODO: replace this with the calc to determine leap year (e.g. divisible by 4, but not 100 unless also divisible by 400) -->
           <Case>
             <When>
-              <Any>
-                <Equal>
-                  <Left>
-                    <Dependency path="/taxYear" />
-                  </Left>
-                  <Right>
-                    <Int>2024</Int>
-                  </Right>
-                </Equal>
-                <Equal>
-                  <Left>
-                    <Dependency path="/taxYear" />
-                  </Left>
-                  <Right>
-                    <Int>2028</Int>
-                  </Right>
-                </Equal>
-              </Any>
+              <Equal>
+                <Left>
+                  <Modulo>
+                    <Left>
+                      <Dependency path="/taxYear" />
+                    </Left>
+                    <Right>
+                      <Int>400</Int>
+                    </Right>
+                  </Modulo>
+                </Left>
+                <Right>
+                  <Int>0</Int>
+                </Right>
+              </Equal>
+            </When>
+            <Then>
+              <True />
+            </Then>
+          </Case>
+          <Case>
+            <When>
+              <Equal>
+                <Left>
+                  <Modulo>
+                    <Left>
+                      <Dependency path="/taxYear" />
+                    </Left>
+                    <Right>
+                      <Int>100</Int>
+                    </Right>
+                  </Modulo>
+                </Left>
+                <Right>
+                  <Int>0</Int>
+                </Right>
+              </Equal>
+            </When>
+            <Then>
+              <False />
+            </Then>
+          </Case>
+          <Case>
+            <When>
+              <Equal>
+                <Left>
+                  <Modulo>
+                    <Left>
+                      <Dependency path="/taxYear" />
+                    </Left>
+                    <Right>
+                      <Int>4</Int>
+                    </Right>
+                  </Modulo>
+                </Left>
+                <Right>
+                  <Int>0</Int>
+                </Right>
+              </Equal>
             </When>
             <Then>
               <True />
