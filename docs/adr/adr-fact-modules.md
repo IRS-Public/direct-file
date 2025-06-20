@@ -27,7 +27,7 @@ These are a few examples of where bugs in some sections have manifested in stran
 
 ### Testing for completeness
 
-We have [completeness tests](../direct-file/df-client/df-client-app/src/test/functionalFlowTests/checkFlowSetsFacts.ts) that can test that a section of the flow will leave certain facts as complete. However, it's unclear which facts we should test for completeness at which points because there are no well defined boundaries between sections. For instance, in example (1) above a test that `/filersCouldntBeDependents` was complete by the end of the spouse section would have prevented the bug, but nobody knew to write that test.
+We have [completeness tests](../../direct-file/df-client/df-client-app/src/test/completenessTests/checkFlowSetsFacts.ts) that can test that a section of the flow will leave certain facts as complete. However, it's unclear which facts we should test for completeness at which points because there are no well defined boundaries between sections. For instance, in example (1) above a test that `/filersCouldntBeDependents` was complete by the end of the spouse section would have prevented the bug, but nobody knew to write that test.
 
 Beyond that, even if we get this right at some point, there's no guarantee it will remain correct, or that developers writing downstream tests will always respect  a `/maybeCompleteFact` that gets a default value in derived fact `/alwaysCompleteFact`, there's no guarantee that a downstream fact will correctly use `/alwaysCompleteFact` instead of accidentally using the maybe complete version. 
 
