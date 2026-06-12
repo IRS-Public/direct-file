@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import mockEnYaml from '../../locales/en.yaml';
 import { sessionStorageMock, mockUseTranslation } from '../../test/mocks/mockFunctions.js';
 import { authKeys } from '../../auth/constants.js';
+import { vi } from 'vitest';
 
 import Header from './Header.js';
 

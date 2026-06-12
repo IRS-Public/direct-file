@@ -6,6 +6,7 @@ import {
   SystemAlertKey,
 } from '../../context/SystemAlertContext/SystemAlertContext.js';
 import { render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 const { mockT, mockI18n } = vi.hoisted(() => {
   return {

@@ -2,7 +2,6 @@ import { FC, PropsWithChildren } from 'react';
 import { Icon } from '@trussworks/react-uswds';
 // mysterious linter error, but the build is fine
 // eslint-disable-next-line import/no-unresolved
-import { IconProps } from '@trussworks/react-uswds/lib/components/Icon/Icon.js';
 import classNames from 'classnames';
 import styles from './IconDisplay.module.scss';
 import { useTranslation } from 'react-i18next';
@@ -18,7 +17,7 @@ export type IconDisplayProps = PropsWithChildren<
     style?: React.CSSProperties;
     i18nKey?: string;
     isCentered?: boolean;
-  } & Omit<IconProps, `path`>
+  } & any
 >;
 
 /* we can pass in className and bare style props, which will be merged with the styles from the module,

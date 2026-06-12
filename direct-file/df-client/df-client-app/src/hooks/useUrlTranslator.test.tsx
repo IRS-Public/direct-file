@@ -2,6 +2,7 @@ import useUrlTranslator from './useUrlTranslator.js';
 import { renderHook } from '@testing-library/react';
 import { LANGUAGE_CODE_PLACEHOLDER } from '../utils/urlUtils.js';
 import { StateProfile } from '../types/StateProfile.js';
+import { vi } from 'vitest';
 
 const { mockUseTranslation } = vi.hoisted(() => {
   return {

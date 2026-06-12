@@ -3,6 +3,7 @@ import { initI18n } from '../../i18n.js';
 import mockEnYaml from '../../locales/en.yaml';
 import { SummaryTable } from './SummaryTable.js';
 import { getByTextWithTags } from '../../utils/test-utils.js';
+import { vi } from 'vitest';
 
 const i18next = await initI18n();
 i18next.addResourceBundle(`test`, `translation`, mockEnYaml);

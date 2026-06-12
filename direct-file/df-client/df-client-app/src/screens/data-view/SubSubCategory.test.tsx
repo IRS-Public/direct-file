@@ -21,6 +21,7 @@ import {
   createTinWrapper,
 } from '../../test/persistenceWrappers.js';
 import { setupFactGraph } from '../../test/setupFactGraph.js';
+import { vi } from 'vitest';
 
 // Test data for rendering subsubcategories
 const w2Id = `0b1e355e-3d19-415d-8470-fbafd9f58361`;

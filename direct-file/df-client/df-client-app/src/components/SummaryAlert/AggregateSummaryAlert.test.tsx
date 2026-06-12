@@ -1,6 +1,7 @@
 import AggregateSummaryAlert, { AggregateSummaryAlertProps } from './AggregateSummaryAlert.js';
 import { render, screen } from '@testing-library/react';
 import { MutableRefObject } from 'react';
+import { vi } from 'vitest';
 
 const { mockT, mockI18n } = vi.hoisted(() => {
   return {

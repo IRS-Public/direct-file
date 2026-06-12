@@ -9,6 +9,7 @@ import {
 } from '../../constants/taxConstants.js';
 import { v4 as uuidv4 } from 'uuid';
 import { expect } from 'vitest';
+import { vi } from 'vitest';
 
 // This mock allows for testing of any component that is rendered using the
 // useTranslation hook from react-i18next.

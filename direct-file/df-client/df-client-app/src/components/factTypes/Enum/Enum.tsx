@@ -99,7 +99,7 @@ const Enum = forwardRef<HTMLInputElement, EnumFactProps>(
           id={path}
           name={path}
           validationStatus={showError ? `error` : undefined}
-          onChange={(event) => handleValueChange(event.target.value)}
+          onChange={(event: any) => handleValueChange(event.target.value)}
           value={selectedValue}
           aria-describedby={errorId}
           required={required}
@@ -125,7 +125,7 @@ const Enum = forwardRef<HTMLInputElement, EnumFactProps>(
           name={path}
           label={<Translation i18nKey={[maybeCustomTranslationKey, translationKey]} collectionId={collectionId} />}
           value={value}
-          onChange={(event) => handleValueChange(event.target.value)}
+          onChange={(event: any) => handleValueChange(event.target.value)}
           defaultChecked={value === fact?.getValue()}
           key={fullPath}
           required

@@ -8,6 +8,7 @@ import { FactGraphContextProvider } from '../../factgraph/FactGraphContext.js';
 import { TaxReturnsContext } from '../../context/TaxReturnsContext.js';
 import { wrapComponent } from '../../test/helpers.js';
 import { setupStore } from '../../redux/store.js';
+import { vi } from 'vitest';
 
 const { t } = vi.hoisted(() => {
   return {

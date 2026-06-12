@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { processPopulateResult } from '../processPopulateResult.js';
 import { DataImportRootResponseSchema } from '../schema/DataImportServiceResponse.js';
-import marge from '../mocks/marge.json';
+import marge from '../../../../../../../backend/src/main/resources/dataimportservice/mocks/marge.json'
 
 const copy = (data: unknown) => JSON.parse(JSON.stringify(data));
 

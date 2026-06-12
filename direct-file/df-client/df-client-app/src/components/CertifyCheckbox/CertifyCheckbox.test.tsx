@@ -1,4 +1,5 @@
 import { i18n, renderWithTranslationProvider as render } from '../../test/test-utils.js';
+import { vi } from 'vitest';
 
 import CertifyCheckbox from './CertifyCheckbox.js';
 

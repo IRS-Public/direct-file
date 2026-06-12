@@ -6,6 +6,7 @@ import TransferInfoModal, { TransferInfoModalProps } from './TransferInfoModal.j
 import { v4 as uuidv4 } from 'uuid';
 import { userEvent } from '@testing-library/user-event';
 import { InterceptingFactGraph } from '../../../factgraph/InterceptingFactGraph.js';
+import { vi } from 'vitest';
 
 const mockFetchPdf = vi.fn();
 const { mockUseFetchPdf, mockI18n, mockUseFactGraph } = vi.hoisted(() => ({

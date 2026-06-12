@@ -9,6 +9,7 @@ import { initialState as initialTelemetryState } from '../redux/slices/telemetry
 import { initialState as initialESigState } from '../redux/slices/electronic-signature/electronicSignatureSlice.js';
 
 import { initialSystemAlertState } from '../redux/slices/system-alert/systemAlertSlice.js';
+import { vi } from 'vitest';
 
 vi.mock(`../redux/store.js`);
 

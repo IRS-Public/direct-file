@@ -5,6 +5,7 @@ import { Mock } from 'vitest';
 import mockEnYaml from '../../locales/en.yaml';
 import { mockUseTranslation } from '../../test/mocks/mockFunctions.js';
 import ClosingSoonBanner from './index.js';
+import { vi } from 'vitest';
 
 vi.mock(`react-i18next`, () => ({
   useTranslation: mockUseTranslation,

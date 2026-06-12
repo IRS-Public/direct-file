@@ -20,6 +20,7 @@ import en from '../../locales/en.yaml';
 import { baseFilerData, primaryFilerId, makeSocialSecurityReport } from '../../test/testData.js';
 import CollectionHubDataView from './CollectionHubDataView.js';
 import { initI18n } from '../../i18n.js';
+import { vi } from 'vitest';
 
 const ssReportId1 = `423bef54-e524-463c-829f-0948df47a4bd`;
 const ssReportId2 = `08eea4dd-c0ee-4128-9afc-2b74dca27101`;

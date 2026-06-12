@@ -10,6 +10,7 @@ import { Path } from '../../../flow/Path.js';
 import { mockUseTranslation } from '../../../test/mocks/mockFunctions.js';
 
 import CollectionItemReference from './CollectionItemReference.js';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   const getCollectionPath = vi.fn((path: FgPath) => path);

@@ -10,6 +10,7 @@ import { FactGraphContextProvider } from '../../../factgraph/FactGraphContext.js
 import { setupStore } from '../../../redux/store.js';
 import { ConcretePath } from '@irs/js-factgraph-scala';
 import { Path } from '../../../flow/Path.js';
+import { vi } from 'vitest';
 
 // This mock allows for testing of any component that is rendered using the
 // useTranslation hook from react-i18next.

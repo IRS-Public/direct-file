@@ -3,7 +3,7 @@ import { store } from '../../../store.js';
 import { fetchProfile } from '../dataImportProfileSlice.js';
 import { fetchDataImportProfile } from '../fetchDataImportProfile.js';
 import { Mock, describe, expect, it, vi } from 'vitest';
-import marge from '../mocks/marge.json';
+import marge from '../../../../../../../backend/src/main/resources/dataimportservice/mocks/marge.json'
 
 vi.mock(`../fetchDataImportProfile.js`, () => ({
   fetchDataImportProfile: vi.fn(), // Mock the function

@@ -2,6 +2,7 @@ import { PropsWithoutRef, ComponentProps } from 'react';
 import { render, screen } from '@testing-library/react';
 import IntroContent from './IntroContent.js';
 import { initI18n } from '../../i18n.js';
+import { vi } from 'vitest';
 
 vi.mock(`../../hooks/useTranslationContextFromFacts`, () => ({
   default: () => {

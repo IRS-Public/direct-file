@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { SubmissionStatusContextType } from '../../context/SubmissionStatusContext/SubmissionStatusContext.js';
 import { TaxReturnSubmissionStatus } from '../../types/core.js';
 import { InterceptingFactGraph } from '../../factgraph/InterceptingFactGraph.js';
-import scenarioJson from '../../test/scenarioTests/jsonScenarios/mfj-all-income-types-withholding.json';
+import scenarioJson from '../../../../../backend/src/test/resources/scenarios/mfj-all-income-types-withholding.json'
 import { TaxReturnsSliceStateData } from '../../redux/slices/tax-return/taxReturnSlice.js';
 
 const noop = () => {

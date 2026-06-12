@@ -4,7 +4,8 @@ import ErrorBoundary from './errorBoundary.js';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store.js';
 import { isTelemetryEnabled } from '../constants/pageConstants.js';
-import { Mock } from 'vitest';
+import { Mock, vi } from 'vitest';
+
 vi.useFakeTimers();
 
 vi.mock(`../constants/pageConstants.js`, () => ({

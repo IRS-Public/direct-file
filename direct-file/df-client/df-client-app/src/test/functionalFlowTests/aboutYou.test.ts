@@ -22,6 +22,7 @@ import { CURRENT_TAX_YEAR } from '../../constants/taxConstants.js';
 import { v4 as uuidv4 } from 'uuid';
 import { fetchTaxReturns } from '../../redux/slices/tax-return/taxReturnSlice.js';
 import { fetchProfile } from '../../redux/slices/data-import/dataImportProfileSlice.js';
+import { vi } from 'vitest';
 
 vi.mock(`../../redux/slices/tax-return/taxReturnFetch.js`, () => ({
   taxReturnFetch: vi.fn(), // Mock the function

@@ -11,6 +11,10 @@
   },
   "devDependencies": {
     "@typescript-eslint/utils": "^5.59.6",
-    "vitest": "^1.6.1"
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "vite": "7.1.0",
+    "vite-node": "3.2.4"
   }
 }

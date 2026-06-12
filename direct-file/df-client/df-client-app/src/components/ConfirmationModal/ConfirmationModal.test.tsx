@@ -2,6 +2,7 @@
 import { render, screen } from '@testing-library/react';
 import { initI18n } from '../../i18n.js';
 import ConfirmationModal from './ConfirmationModal.js';
+import { vi } from 'vitest';
 
 const i18next = await initI18n();
 i18next.addResourceBundle(`test`, `translation`, {

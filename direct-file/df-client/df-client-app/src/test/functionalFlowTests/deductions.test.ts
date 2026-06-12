@@ -13,6 +13,7 @@ import {
 } from '../testData.js';
 import makeGivenFacts from './functionalFlowUtils.js';
 import { setupFactGraph } from '../setupFactGraph.js';
+import { vi } from 'vitest';
 
 const flow = createFlowConfig(flowNodes);
 const givenFacts = makeGivenFacts(flow);

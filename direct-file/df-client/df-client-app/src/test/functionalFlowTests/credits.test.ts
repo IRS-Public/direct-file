@@ -13,6 +13,7 @@ import flowNodes from '../../flow/flow.js';
 import { TAX_YEAR_2023 } from '../../constants/taxConstants.js';
 import makeGivenFacts from './functionalFlowUtils.js';
 import { setupFactGraph } from '../setupFactGraph.js';
+import { vi } from 'vitest';
 
 const flow = createFlowConfig(flowNodes);
 const givenFacts = makeGivenFacts(flow);

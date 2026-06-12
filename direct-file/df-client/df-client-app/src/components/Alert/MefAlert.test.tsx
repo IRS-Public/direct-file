@@ -1,5 +1,6 @@
 import MefAlert, { MefAlertProps } from './MefAlert.js';
 import { render, screen, within } from '@testing-library/react';
+import { vi } from 'vitest';
 
 const { mockT, mockI18n } = vi.hoisted(() => {
   return {

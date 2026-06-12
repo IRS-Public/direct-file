@@ -13,6 +13,7 @@ import {
 } from '../../context/SystemAlertContext/SystemAlertContext.js';
 import { TaxReturnsContext } from '../../context/TaxReturnsContext.js';
 import { userEvent } from '@testing-library/user-event';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   const submit = vi.fn(() => ({ hasSubmitError: false, isRetryDisabled: false }));

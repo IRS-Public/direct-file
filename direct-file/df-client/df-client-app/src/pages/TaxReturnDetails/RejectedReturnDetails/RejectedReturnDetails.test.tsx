@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { BrowserRouter } from 'react-router-dom';
 import { TaxReturn } from '../../../types/core.js';
 import enLocale from '../../../locales/en.yaml';
+import { vi } from 'vitest';
 
 const { mockT, mockI18n } = vi.hoisted(() => {
   return {

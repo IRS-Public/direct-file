@@ -1,6 +1,6 @@
 import { noFactGraphSaveRule } from './no-factgraph-save.js';
 
-module.exports = {
+export default {
   rules: {
     'no-factgraph-save': noFactGraphSaveRule,
   },

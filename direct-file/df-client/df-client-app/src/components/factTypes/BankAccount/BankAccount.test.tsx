@@ -8,6 +8,7 @@ import { setupStore } from '../../../redux/store.js';
 import { Path } from '../../../flow/Path.js';
 import type { useFactControl } from '../../../hooks/useFactControl.js';
 import type { BankAccount as SFGBankAccount, BankAccountValidationFailure } from '@irs/js-factgraph-scala';
+import { vi } from 'vitest';
 
 const mockUseFactControl = await vi.hoisted(async () => {
   type UseFactControl = typeof useFactControl<SFGBankAccount, BankAccountValidationFailure, SFGBankAccount>;

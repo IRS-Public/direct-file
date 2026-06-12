@@ -5,6 +5,7 @@ import { createRef } from 'react';
 import { Path } from '../../../flow/Path.js';
 import { customRender } from '../../../utils/test-utils.js';
 import Tin from './Tin.js';
+import { vi } from 'vitest';
 
 // This mock allows for testing of any component that is rendered using the
 // useTranslation hook from react-i18next.

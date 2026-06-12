@@ -1,5 +1,6 @@
 import { formatAndAppendHeaders, SM_UNIVERSALID, XFF_HEADER, TID_HEADER } from './apiHelpers.js';
 import { v4 as uuidv4 } from 'uuid';
+import { vi } from 'vitest';
 
 const {
   VITE_SADI_AUTH_ID,

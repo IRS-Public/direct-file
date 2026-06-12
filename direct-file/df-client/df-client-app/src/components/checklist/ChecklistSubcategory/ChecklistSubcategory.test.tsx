@@ -6,6 +6,7 @@ import { screen } from '@testing-library/react';
 import { HelmetProvider } from 'react-helmet-async';
 import { FactGraphContextProvider } from '../../../factgraph/FactGraphContext.js';
 import { setupStore } from '../../../redux/store.js';
+import { vi } from 'vitest';
 
 const sharedProps = {
   isNext: true,

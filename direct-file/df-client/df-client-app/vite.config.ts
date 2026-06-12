@@ -1,4 +1,4 @@
-import { UserConfig, defineConfig } from 'vitest/config';
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import browserslistToEsbuild from 'browserslist-to-esbuild';
 import { JSON_SCHEMA } from 'js-yaml';
@@ -7,7 +7,7 @@ import viteTsconfigPaths from 'vite-tsconfig-paths';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
 
-export const configOptions: UserConfig = {
+export default defineConfig({
   base: process.env.DF_CLIENT_PUBLIC_PATH || '/df/file',
   assetsInclude: ['**/*.svg'],
   plugins: [react(), viteTsconfigPaths(), ViteYaml({ schema: JSON_SCHEMA })],
@@ -17,11 +17,11 @@ export const configOptions: UserConfig = {
       localsConvention: 'camelCaseOnly',
     },
     postcss: {
-      plugins: [autoprefixer()],
+      plugins: [autoprefixer() as any],
     },
     preprocessorOptions: {
       scss: {
-        includePaths: ['../node_modules/@uswds', '../node_modules/@uswds/uswds/packages'],
+        loadPaths: ['../node_modules/@uswds', '../node_modules/@uswds/uswds/packages'],
         silenceDeprecations: ['legacy-js-api'],
       },
     },
@@ -38,7 +38,7 @@ export const configOptions: UserConfig = {
       // Mock OLA
       '/ola/rest/taxpayer/taxRecord': {
         bypass: (_req, res, _options) => {
-          res.write(
+          res!.write(
             JSON.stringify({
               transcriptSummary: {
                 panelShowing: true,
@@ -58,7 +58,7 @@ export const configOptions: UserConfig = {
               },
             })
           );
-          res.end();
+          res!.end();
           return 'Bypassed'; // string return value prevents this from going to the original req.target
         },
       },
@@ -97,7 +97,4 @@ export const configOptions: UserConfig = {
       },
     },
   },
-};
-
-// https://vitejs.dev/config/
-export default defineConfig(configOptions);
+});

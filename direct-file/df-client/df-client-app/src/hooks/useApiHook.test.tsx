@@ -15,6 +15,7 @@ import { taxReturnFetch } from '../redux/slices/tax-return/taxReturnFetch.js';
 import { Provider } from 'react-redux';
 import { store } from '../redux/store.js';
 import { fetchTaxReturns } from '../redux/slices/tax-return/taxReturnSlice.js';
+import { vi } from 'vitest';
 
 vi.mock(`../redux/slices/tax-return/taxReturnFetch.js`, () => ({
   taxReturnFetch: vi.fn(), // Mock the function

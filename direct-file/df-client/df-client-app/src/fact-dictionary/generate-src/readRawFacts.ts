@@ -1,9 +1,10 @@
 import fs from 'fs';
 import { XMLParser, XMLValidator, X2jOptions } from 'fast-xml-parser';
 import { RawFact } from '../FactTypes.js';
+import path from 'path';
 
 export default function readRawFacts(): RawFact[] {
-  const FACT_DICTIONARY_FOLDER = `./src/fact-dictionary/generate-src/xml-src/`;
+  const FACT_DICTIONARY_FOLDER = `../../backend/src/main/resources/tax/`;
 
   const XML_PARSER_OPTIONS: X2jOptions = {
     ignoreAttributes: false,
@@ -22,7 +23,10 @@ export default function readRawFacts(): RawFact[] {
     // eslint-disable-next-line no-console
     console.log(`Reading file ${dictionaryFile}`);
     // nosemgrep: eslint.detect-non-literal-fs-filename
-    const rawXmlString = fs.readFileSync(FACT_DICTIONARY_FOLDER + dictionaryFile, `utf-8`);
+    const rawXmlString = fs.readFileSync(
+      path.join(FACT_DICTIONARY_FOLDER, dictionaryFile),
+      `utf-8`
+    );
 
     const xmlValidationResult = XMLValidator.validate(rawXmlString, {
       allowBooleanAttributes: true,

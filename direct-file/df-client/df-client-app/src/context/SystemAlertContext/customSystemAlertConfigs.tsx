@@ -52,7 +52,7 @@ const getTinMismatchCustomConfig: CustomSystemAlertConfigBuilder = (options = {}
       : {
           primaryFilerSsnOrItinLink: <CommonLinkRenderer url={primarySsnUrl} />,
         },
-  };
+  } as any;
 };
 
 /**

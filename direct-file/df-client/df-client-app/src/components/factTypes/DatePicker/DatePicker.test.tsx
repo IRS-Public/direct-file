@@ -4,6 +4,7 @@ import { Path } from '../../../flow/Path.js';
 import { i18n, renderWithTranslationProvider as render, fireEvent } from '../../../test/test-utils.js';
 import { DatePicker, validateDate } from './DatePicker.js';
 import { ConcretePath, Day } from '@irs/js-factgraph-scala';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   // useFact related hooks

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useId } from 'react';
 import { ConcretePath, JSeither } from '@irs/js-factgraph-scala';
 import { FormGroup, InputGroup, InputPrefix, TextInput, InputSuffix } from '@trussworks/react-uswds';
-import type { TextInputProps } from '@trussworks/react-uswds/lib/components/forms/TextInput/TextInput.js';
+import type { TextInputProps } from './DFTextInput.js';
 import { useFactControl } from '../../hooks/useFactControl.js';
 import { buildControlErrorId, buildFormControlId, buildHintId, buildHintKey, sanitizeString } from './helpers.js';
 import Translation from '../Translation/index.js';
@@ -191,7 +191,7 @@ export function TextFormControl<FactValue, FactError>({
     <SimpleTextFormControl
       errorMessage={errorMessage}
       required={required}
-      onChange={(event) => onChange(event.target.value)}
+      onChange={(event: any) => onChange(event.target.value)}
       {...formControlProps}
     />
   );

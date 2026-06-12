@@ -53,7 +53,7 @@ export function conditionsAsKeySuffix({ props: { condition, conditions } }: Scre
   const normalizedConditions = condition === undefined ? conditions ?? [] : [condition];
 
   return normalizedConditions
-    .map((condition) =>
+    .map((condition: any) =>
       typeof condition === `string` ? condition : `${condition.operator ?? `isTrue`}:${condition.condition}`
     )
     .join(`-`);

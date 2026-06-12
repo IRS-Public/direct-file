@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import MultiEnum from './MultiEnum.js';
 import { Path as FgPath } from '../../../fact-dictionary/Path.js';
 import { Path } from '../../../flow/Path.js';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   const getOptionsPath = vi.fn((path: FgPath) => {

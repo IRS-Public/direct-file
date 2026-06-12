@@ -4,6 +4,7 @@ import { ComplexFormControl } from './ComplexFormControl.js';
 import { PAGE_HEADING_ID } from '../PageTitle/index.js';
 import { ConcretePath } from '@irs/js-factgraph-scala';
 import { Path } from '../../fact-dictionary/Path.js';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   return {

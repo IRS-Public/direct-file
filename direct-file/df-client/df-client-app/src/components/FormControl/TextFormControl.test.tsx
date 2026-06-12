@@ -4,6 +4,7 @@ import { userEvent } from '@testing-library/user-event';
 import { TextFormControl } from './TextFormControl.js';
 import { ConcretePath, JSEitherL, JSEitherR, JSeither } from '@irs/js-factgraph-scala';
 import { Path } from '../../fact-dictionary/Path.js';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   return {

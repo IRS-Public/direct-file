@@ -3,6 +3,7 @@ import { useFactControl, UseFactControlParameters } from './useFactControl.js';
 import { EitherL, EitherR } from '@irs/js-factgraph-scala/src/typings/utils/JSEither.js';
 import { Dispatch, SetStateAction } from 'react';
 import { renderHook } from '@testing-library/react';
+import { vi } from 'vitest';
 
 type TestError = string;
 type TestRawValue = { isValid: true } | { isValid: false; error: TestError };

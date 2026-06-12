@@ -4,6 +4,7 @@ import { FactGraphContextProvider } from '../../factgraph/FactGraphContext.js';
 import { setupStore } from '../../redux/store.js';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+import { vi } from 'vitest';
 
 import IconList from './IconList.js';
 

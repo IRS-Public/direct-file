@@ -12,6 +12,7 @@ import flowNodes from '../../flow/flow.js';
 import makeGivenFacts from './functionalFlowUtils.js';
 import { CollectionItemReferenceFactory } from '@irs/js-factgraph-scala';
 import { setupFactGraph } from '../setupFactGraph.js';
+import { vi } from 'vitest';
 
 const flow = createFlowConfig(flowNodes);
 const givenFacts = makeGivenFacts(flow);

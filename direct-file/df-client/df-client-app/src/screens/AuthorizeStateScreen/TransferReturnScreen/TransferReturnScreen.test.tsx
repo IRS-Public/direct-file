@@ -8,6 +8,7 @@ import { InterceptingFactGraph } from '../../../factgraph/InterceptingFactGraph.
 import { SystemAlertConfigs, SystemAlertContext } from '../../../context/SystemAlertContext/SystemAlertContext.js';
 import { initI18n } from '../../../i18n.js';
 import { StateApiErrorCode } from '../../../constants/stateApiConstants.js';
+import { vi } from 'vitest';
 
 const { mockUseFactGraph } = vi.hoisted(() => ({
   mockUseFactGraph: vi.fn(() => ({

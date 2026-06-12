@@ -36,7 +36,7 @@ import { isFlowEnabled } from './constants/pageConstants.js';
 import { store } from './redux/store.js';
 
 // These styles are global so we make sure it is imported at the root
-import '@trussworks/react-uswds/lib/index.css';
+import '../node_modules/@trussworks/react-uswds/lib/index.css'
 import FileYourStateTaxesDetails from './components/FileYourStateTaxesDetails/FileYourStateTaxesDetails.js';
 import { FactGraphTranslationContext } from './context/FactGraphTranslationContext.js';
 import { DataImportMagicScreen } from './components/DataImportMagicScreen/DataImportMagicScreen.js';

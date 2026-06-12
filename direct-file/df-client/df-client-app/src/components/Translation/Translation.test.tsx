@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import Translation from './Translation.js';
 import { initI18n } from '../../i18n.js';
+import { vi } from 'vitest';
 
 vi.mock(`../../hooks/useTranslationContextFromFacts`, () => ({
   default: () => {

@@ -4,6 +4,7 @@ import { createBooleanWrapper, createDayWrapper } from '../persistenceWrappers.j
 import { baseFilerData, filerWithPaymentDueData } from '../testData.js';
 import { setupFactGraph } from '../setupFactGraph.js';
 import { CURRENT_TAX_YEAR } from '../../constants/taxConstants.js';
+import { vi } from 'vitest';
 
 describe(`Payment method`, () => {
   const basePaymentMethodData = {

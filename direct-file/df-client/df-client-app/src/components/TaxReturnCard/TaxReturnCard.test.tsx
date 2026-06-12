@@ -8,6 +8,7 @@ import { CreateTaxReturnCard } from './CreateTaxReturnCard.js';
 import en from '../../locales/en.yaml';
 import { store } from '../../redux/store.js';
 import { Provider } from 'react-redux';
+import { vi } from 'vitest';
 
 const { mockIsFlowEnabled } = vi.hoisted(() => {
   return {

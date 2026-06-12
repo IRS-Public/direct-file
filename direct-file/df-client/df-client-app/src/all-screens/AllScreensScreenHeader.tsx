@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Accordion, Tag } from '@trussworks/react-uswds';
-import { AccordionItemProps } from '@trussworks/react-uswds/lib/components/Accordion/Accordion.js';
+import { CommonAccordionItemProps } from '@irs/df-common';
 import { dependenciesPerTaxTest } from './AllScreensContext.js';
 import { BatchDetails, CONTENT_BATCHES, calculateScreenStatus } from '../flow/batches.js';
 import { ScreenConfig } from '../flow/ScreenConfig.js';
@@ -85,7 +85,7 @@ const AllScreensScreenHeader: FC<AllScreensScreenHeaderProps> = ({ screen }) => 
     </>
   );
   if (taxTestsAffectedByScreen.length > 0) {
-    const taxTestsItems: AccordionItemProps[] = [
+    const taxTestsItems: CommonAccordionItemProps[] = [
       {
         title: `Tax tests affected (${taxTestsAffectedByScreen.length})`,
         content: (
@@ -106,7 +106,7 @@ const AllScreensScreenHeader: FC<AllScreensScreenHeaderProps> = ({ screen }) => 
 
   if (screen.batches.length > 0) {
     const batchDetailsContent = getBatchDetailsContent(screen);
-    const batchDetailsItems: AccordionItemProps[] = [
+    const batchDetailsItems: CommonAccordionItemProps[] = [
       {
         title: `Batch Details`,
         content: batchDetailsContent,
@@ -135,7 +135,7 @@ const AllScreensScreenHeader: FC<AllScreensScreenHeaderProps> = ({ screen }) => 
     screenHeaderTitle.push(<Tag background='#783cb9'>{taxTestsAffectedByScreen.length} tests</Tag>);
   }
 
-  const screenHeaderItems: AccordionItemProps[] = [
+  const screenHeaderItems: CommonAccordionItemProps[] = [
     {
       title: screenHeaderTitle,
       content: screenHeaderContent,

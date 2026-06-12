@@ -122,7 +122,7 @@ const SurveyModal = ({ modalRef, toggleModal, openSurveyConfirmationModal }: Sur
               checked={isChecked}
               required
               className='full-width-checkbox'
-              onChange={(e) => setIsChecked(e.target.checked ? true : false)}
+              onChange={(e: any) => setIsChecked(e.target.checked ? true : false)}
             />
           </div>
           <ModalFooter>

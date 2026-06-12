@@ -16,7 +16,7 @@ export const BackButton = () => {
       type='button'
       className='screen__back-button'
       unstyled
-      onClick={(evt) => {
+      onChange={(evt: any) => {
         evt.preventDefault();
         // @ts-expect-error react navigation type is not defined correctly
         navigate(-1, { preventScrollReset: true });

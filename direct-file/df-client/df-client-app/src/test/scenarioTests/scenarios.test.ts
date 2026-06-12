@@ -1,5 +1,6 @@
 // eslint-disable-next-line max-len
-import scenarioO1Json from './jsonScenarios/ats-1.json';
+// import scenarioO1Json from './jsonScenarios/ats-1.json';
+import scenarioO1Json from '../../../../../backend/src/test/resources/scenarios/ats-1.json'
 import { ConcretePath, FactGraph, ScalaList } from '@irs/js-factgraph-scala';
 import { singleNoDependentsWithTwoW2s01 as snapshotScenario01 } from './goldenScenarios.js';
 import { FactValue } from '../../types/core.js';

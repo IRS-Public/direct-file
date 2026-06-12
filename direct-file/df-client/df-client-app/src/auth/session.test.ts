@@ -1,5 +1,6 @@
 import { sessionStorageMock } from '../test/mocks/mockFunctions.js';
 import { SessionClock } from './session.js';
+import { vi } from 'vitest';
 
 const SessionManagerMock = {
   closeAlert: vi.fn(),

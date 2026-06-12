@@ -104,7 +104,7 @@ const MultiEnum = forwardRef<HTMLInputElement, MultiEnumProps>(
             name={path}
             value={value}
             checked={selectedValues.has(value)}
-            onChange={(event) => handleValueChange(event.target.value)}
+            onChange={(event: any) => handleValueChange(event.target.value)}
           />
         ))}
       </ComplexFormControl>

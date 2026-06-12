@@ -17,6 +17,7 @@ import {
   SystemAlertKey,
 } from '../../context/SystemAlertContext/SystemAlertContext.js';
 import { TaxReturnsContext, TaxReturnsContextType } from '../../context/TaxReturnsContext.js';
+import { vi } from 'vitest';
 
 const { useFact, getIsKnockedOut } = vi.hoisted(() => {
   return {

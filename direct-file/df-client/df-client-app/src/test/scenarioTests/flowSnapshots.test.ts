@@ -11,7 +11,8 @@ import { fetchDataImportProfile } from '../../redux/slices/data-import/fetchData
 import { fetchProfile } from '../../redux/slices/data-import/dataImportProfileSlice.js';
 import { store } from '../../redux/store.js';
 import { TaxReturn } from '../../types/core.js';
-import marge from '../../redux/slices/data-import/mocks/marge.json';
+import { vi } from 'vitest';
+import marge from '../../../../../backend/src/main/resources/dataimportservice/mocks/marge.json'
 
 vi.mock(`../../redux/slices/data-import/fetchDataImportProfile.js`, () => ({
   fetchDataImportProfile: vi.fn(), // Mock the function

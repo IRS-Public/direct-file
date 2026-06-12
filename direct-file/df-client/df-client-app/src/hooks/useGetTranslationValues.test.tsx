@@ -1,6 +1,7 @@
 import { useGetTranslationValues } from './useGetTranslationValues.js';
 import { renderHook } from '@testing-library/react';
 import { getTranslationValuesRecursive } from '../utils/i18nUtils.js';
+import { vi } from 'vitest';
 
 const { mockT, mockI18n } = vi.hoisted(() => {
   return {

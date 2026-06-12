@@ -6,6 +6,7 @@ import { Path as FgPath } from '../../../fact-dictionary/Path.js';
 import { FactGraphContextProvider } from '../../../factgraph/FactGraphContext.js';
 import { setupStore } from '../../../redux/store.js';
 import { Path } from '../../../flow/Path.js';
+import { vi } from 'vitest';
 
 import Enum from './Enum.js';
 

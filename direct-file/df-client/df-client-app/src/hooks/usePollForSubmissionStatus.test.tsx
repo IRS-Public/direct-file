@@ -10,6 +10,7 @@ import { getCurrentTaxYearReturn, getLatestSubmission } from '../utils/taxReturn
 import { TaxReturnsContext } from '../context/TaxReturnsContext.js';
 import { store } from '../redux/store.js';
 import { Provider } from 'react-redux';
+import { vi } from 'vitest';
 
 const mockFetchTaxReturnsApiRequest = vi.fn();
 const mockFetchSubmissionStatusApiRequest = vi.fn();

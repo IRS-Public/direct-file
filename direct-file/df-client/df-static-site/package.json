@@ -9,6 +9,7 @@
     "@types/js-yaml": "^4.0.5",
     "@uswds/uswds": "^3.7.1",
     "@vitejs/plugin-react": "^4.2.0",
+    "@vitest/coverage-v8": "3.2.4",
     "assert-never": "^1.2.1",
     "classnames": "^2.3.2",
     "crypto-js": "4.2.0",
@@ -21,7 +22,7 @@
     "react-i18next": "^15.1.0",
     "react-router-dom": "^6.27.0",
     "uuid": "^9.0.0",
-    "vite": "^5.4.15",
+    "vite": "^7.1.0",
     "vite-tsconfig-paths": "^4.2.0",
     "web-vitals": "^2.1.0"
   },
@@ -57,7 +58,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/uuid": "^9.0.1",
-    "@vitest/ui": "^1.4.0",
+    "@vitest/ui": "^3.2.4",
     "autoprefixer": "^10.4.14",
     "browserslist-to-esbuild": "^1.2.0",
     "eslint-plugin-df-rules": "^1.0.0",
@@ -68,8 +69,8 @@
     "sass": "^1.63.5",
     "ts-node": "^10.9.1",
     "typescript": "5.6.3",
-    "vite-node": "^2.1.8",
-    "vitest": "^1.6.1",
+    "vite-node": "^3.2.4",
+    "vitest": "^3.2.4",
     "zod": "^3.23.8"
   }
 }

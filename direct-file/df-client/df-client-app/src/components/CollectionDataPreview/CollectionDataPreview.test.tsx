@@ -5,13 +5,14 @@ import CollectionDataPreview from './CollectionDataPreview.js';
 import { Path } from '../../flow/Path.js';
 import { Provider } from 'react-redux';
 import { store } from '../../redux/store.js';
-import marge from '../../redux/slices/data-import/mocks/marge.json';
+import marge from '../../../../../backend/src/main/resources/dataimportservice/mocks/marge.json'
 import { processPopulateResult } from '../../redux/slices/data-import/processPopulateResult.js';
 import { DataImportRootResponseSchema } from '../../redux/slices/data-import/schema/DataImportServiceResponse.js';
 import { FactGraphContextProvider } from '../../factgraph/FactGraphContext.js';
 import mockEnYaml from '../../locales/en.yaml';
 import { getEmptySystemAlertsMap, SystemAlertContext } from '../../context/SystemAlertContext/SystemAlertContext.js';
 import * as useApiHook from '../../hooks/useApiHook.js';
+import { vi } from 'vitest';
 
 vi.mock(`react-i18next`, () => ({
   useTranslation: mockUseTranslation,

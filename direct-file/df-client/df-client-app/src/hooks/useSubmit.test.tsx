@@ -15,6 +15,7 @@ import {
   SystemAlertContext,
   SystemAlertKey,
 } from '../context/SystemAlertContext/SystemAlertContext.js';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   return {

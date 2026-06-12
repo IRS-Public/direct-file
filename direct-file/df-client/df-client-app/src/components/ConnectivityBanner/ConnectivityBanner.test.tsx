@@ -7,6 +7,7 @@ import { mockUseTranslation } from '../../test/mocks/mockFunctions.js';
 import { NetworkConnectionContext } from '../../context/networkConnectionContext.js';
 import ConnectivityBanner from './index.js';
 import { NetworkStatus } from '../../hooks/useNetworkConnectionStatus.js';
+import { vi } from 'vitest';
 
 vi.mock(`react-i18next`, () => ({
   useTranslation: mockUseTranslation,

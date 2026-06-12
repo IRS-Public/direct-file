@@ -24,6 +24,7 @@ import CollectionItemDataView from './CollectionItemDataView.js';
 import { SystemAlertContext, getEmptySystemAlertsMap } from '../../context/SystemAlertContext/SystemAlertContext.js';
 import { setupStore } from '../../redux/store.js';
 import { ReactNode } from 'react';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   return {

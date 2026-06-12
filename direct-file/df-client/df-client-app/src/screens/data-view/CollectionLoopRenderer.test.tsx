@@ -25,6 +25,7 @@ import {
   makeW2Data,
   primaryFilerId,
 } from '../../test/testData.js';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   return {

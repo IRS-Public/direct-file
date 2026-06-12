@@ -3,6 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import { CURRENT_TAX_YEAR, FEDERAL_RETURN_STATUS } from '../../../constants/taxConstants.js';
 import { userEvent } from '@testing-library/user-event';
 import { wrapComponent } from '../../../test/helpers.js';
+import { vi } from 'vitest';
 
 const mockHandleGoBack = vi.fn();
 

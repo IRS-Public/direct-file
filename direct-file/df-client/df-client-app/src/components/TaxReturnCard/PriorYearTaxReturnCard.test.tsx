@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { TaxReturnsContext } from '../../context/TaxReturnsContext.js';
 import { v4 as uuidv4 } from 'uuid';
 import { getCurrentTaxYearReturn } from '../../utils/taxReturnUtils.js';
+import { vi } from 'vitest';
 
 const currentTaxYear = parseInt(CURRENT_TAX_YEAR);
 const previousTaxYear = Number.parseInt(CURRENT_TAX_YEAR) - 1;

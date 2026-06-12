@@ -208,28 +208,28 @@ const AllScreensMenu: FC<AllScreensMenuProps> = ({
                 id='check-show-conditionals'
                 name='conditionals'
                 label='Show conditional screen logic'
-                onChange={(e) => onConditionalScreenLogicToggle(e.target.checked)}
+                onChange={(e: any) => onConditionalScreenLogicToggle(e.target.checked)}
                 checked={showConditionalScreenLogic}
               />
               <Checkbox
                 id='check-show-modals'
                 name='show-modals'
                 label='Show modals'
-                onChange={(e) => setShowModals(e.target.checked)}
+                onChange={(e: any) => setShowModals(e.target.checked)}
                 checked={showModals}
               />
               <Checkbox
                 id='check-show-dataviews'
                 name='show-dataviews'
                 label='Show dataviews'
-                onChange={(e) => setShowDataviews(e.target.checked)}
+                onChange={(e: any) => setShowDataviews(e.target.checked)}
                 checked={showDataviews}
               />
               <Checkbox
                 id='check-hide-alerts'
                 name='hide-alerts'
                 label='Hide alerts'
-                onChange={(e) => setHideAlerts(e.target.checked)}
+                onChange={(e: any) => setHideAlerts(e.target.checked)}
                 checked={hideAlerts}
               />
             </fieldset>

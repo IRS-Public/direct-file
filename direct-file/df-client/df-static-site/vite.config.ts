@@ -1,4 +1,3 @@
-import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import browserslistToEsbuild from 'browserslist-to-esbuild';
 import { JSON_SCHEMA } from 'js-yaml';
@@ -6,6 +5,7 @@ import ViteYaml from '@modyfi/vite-plugin-yaml';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 import autoprefixer from 'autoprefixer';
 import path from 'path';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,11 +18,11 @@ export default defineConfig({
       localsConvention: 'camelCaseOnly',
     },
     postcss: {
-      plugins: [autoprefixer()],
+      plugins: [autoprefixer() as any],
     },
     preprocessorOptions: {
       scss: {
-        includePaths: [`../node_modules/@uswds`, `../node_modules/@uswds/uswds/packages`],
+        loadPaths: [`../node_modules/@uswds`, `../node_modules/@uswds/uswds/packages`],
       },
     },
   },

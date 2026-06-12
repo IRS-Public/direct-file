@@ -33,6 +33,7 @@ import { ReactNode } from 'react';
 import { getEmptySystemAlertsMap, SystemAlertContext } from '../context/SystemAlertContext/SystemAlertContext.js';
 import * as pageConstants from '../constants/pageConstants.js';
 import CollectionItemDataView from './data-view/CollectionItemDataView.js';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   return {

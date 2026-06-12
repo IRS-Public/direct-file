@@ -3,7 +3,6 @@ services:
     image: postgres:15
     container_name: direct-file-db
     restart: always
-    # the postgres docker image defaults to uid and gid 999, optionally override it with our env vars
     user: "${DF_DB_USER_ID:-999}:${DF_DB_GROUP_ID:-999}"
     entrypoint: "/bin/bash"
     command: -c "chown -R ${DF_DB_USER_ID:-999}:${DF_DB_GROUP_ID:-999} /var/lib/postgresql/data & exec /usr/local/bin/docker-entrypoint.sh postgres"
@@ -13,7 +12,7 @@ services:
       POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=en_US.UTF-8 --lc-ctype=en_US.UTF-8"
     volumes:
       - "./docker/db/postgres/init:/docker-entrypoint-initdb.d:ro"
-      - "./docker/db/postgres/data:/var/lib/postgresql/data"
+      - direct_file_db_data:/var/lib/postgresql/data
     ports:
       - "${DF_LISTEN_ADDRESS:-127.0.0.1}:${DF_DB_PORT:-5435}:5432"
     healthcheck: &dbhealth
@@ -24,42 +23,37 @@ services:
       start_period: 60s
     stop_grace_period: 60s
 
-
   state-api-db:
     image: postgres:15
     container_name: state-api-db
     restart: always
-    # the postgres docker image defaults to uid and gid 999, optionally override it with our env vars
     user: "${STATEAPI_DB_USER_ID:-999}:${STATEAPI_DB_GROUP_ID:-999}"
     entrypoint: "/bin/bash"
     command: -c "chown -R ${DF_DB_USER_ID:-999}:${DF_DB_GROUP_ID:-999} /var/lib/postgresql/data & exec /usr/local/bin/docker-entrypoint.sh postgres"
     environment: *dbuser
     volumes:
       - "./state-api/docker/db/postgres/init:/docker-entrypoint-initdb.d:ro"
-      - "./state-api/docker/db/postgres/data:/var/lib/postgresql/data"
+      - state_api_db_data:/var/lib/postgresql/data
     ports:
       - "${DF_LISTEN_ADDRESS:-127.0.0.1}:${STATEAPI_DB_PORT:-5433}:5432"
     healthcheck: *dbhealth
     stop_grace_period: 60s
 
-
   email-service-db:
     image: postgres:15
     container_name: email-service-db
     restart: always
-    # the postgres docker image defaults to uid and gid 999, optionally override it with our env vars
     user: "${DF_EMAIL_DB_USER_ID:-999}:${DF_EMAIL_DB_GROUP_ID:-999}"
     entrypoint: "/bin/bash"
     command: -c "chown -R ${DF_DB_USER_ID:-999}:${DF_DB_GROUP_ID:-999} /var/lib/postgresql/data & exec /usr/local/bin/docker-entrypoint.sh postgres"
     environment: *dbuser
     volumes:
       - "./email-service/docker/db/postgres/init:/docker-entrypoint-initdb.d:ro"
-      - "./email-service/docker/db/postgres/data:/var/lib/postgresql/data"
+      - email_service_db_data:/var/lib/postgresql/data
     ports:
       - "${DF_LISTEN_ADDRESS:-127.0.0.1}:${DF_EMAIL_DB_PORT:-5434}:5432"
     healthcheck: *dbhealth
     stop_grace_period: 60s
-
 
   api:
     container_name: direct-file-api
@@ -306,3 +300,8 @@ services:
     image: redis:7.0
     ports:
       - "${DF_LISTEN_ADDRESS:-127.0.0.1}:6379:6379"
+
+volumes:
+  direct_file_db_data:
+  state_api_db_data:
+  email_service_db_data:

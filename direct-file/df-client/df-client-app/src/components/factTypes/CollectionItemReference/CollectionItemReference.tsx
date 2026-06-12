@@ -62,7 +62,7 @@ const CollectionItemReference = forwardRef<HTMLInputElement, FactProps>(
           name={path}
           label={<Translation i18nKey={translationKey} collectionId={value} />}
           value={value}
-          onChange={(event) => onChange(event.target.value)}
+          onChange={(event: any) => onChange(event.target.value)}
           defaultChecked={defaultChecked}
           required
           key={fullPath}

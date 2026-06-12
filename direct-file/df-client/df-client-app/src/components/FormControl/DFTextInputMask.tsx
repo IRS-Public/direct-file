@@ -1,6 +1,6 @@
 import React, { forwardRef, useEffect, useState } from 'react';
 import classnames from 'classnames';
-import type { TextInputProps } from '@trussworks/react-uswds/lib/components/forms/TextInput/TextInput.js';
+import type { TextInputProps } from './DFTextInput.js';
 import { DFTextInput } from './DFTextInput.js';
 
 export type AllProps = TextInputProps & {

@@ -5,6 +5,7 @@ import { mockUseTranslation } from '../../test/mocks/mockFunctions.js';
 import Head from './Head.js';
 import { NetworkConnectionContext } from '../../context/networkConnectionContext.js';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { vi } from 'vitest';
 
 vi.mock(`react-i18next`, () => ({
   useTranslation: mockUseTranslation,

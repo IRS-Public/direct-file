@@ -7,6 +7,7 @@ import { setupStore } from '../../../redux/store.js';
 import { ConcretePath } from '@irs/js-factgraph-scala';
 import { test, expect } from 'vitest';
 import { AbsolutePath } from '../../../fact-dictionary/Path.js';
+import { vi } from 'vitest';
 
 const mocks = vi.hoisted(() => {
   // useFact related hooks

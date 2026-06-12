@@ -28,8 +28,6 @@ function parseAlertsByType<AlertConfig extends AggregatedAlertConfig>(alerts: Al
       case `error`:
         errors.push(alert);
         break;
-      default:
-        assertNever(alert.props.type);
     }
   });
 
@@ -94,7 +92,7 @@ const ScreenAlertAggregator = ({
           // Mef errors
           mefErrors.map((mefError) => (
             <MefAlert
-              {...mefError.props}
+              {...mefError.props as any}
               collectionId={collectionId}
               key={`${buildAlertKey(mefError)}-${mefError.props.mefErrorCode}`}
             />
@@ -103,7 +101,7 @@ const ScreenAlertAggregator = ({
         {
           // Tax return errors
           taxReturnErrors.map((taxReturnError) => (
-            <TaxReturnAlert {...taxReturnError.props} collectionId={collectionId} key={buildAlertKey(taxReturnError)} />
+            <TaxReturnAlert {...taxReturnError.props as any} collectionId={collectionId} key={buildAlertKey(taxReturnError)} />
           ))
         }
         {
@@ -114,7 +112,7 @@ const ScreenAlertAggregator = ({
           // MeF warnings
           mefWarnings.map((mefWarning) => (
             <MefAlert
-              {...mefWarning.props}
+              {...mefWarning.props as any}
               collectionId={collectionId}
               key={`${buildAlertKey(mefWarning)}-${mefWarning.props.mefErrorCode}`}
             />
@@ -126,7 +124,7 @@ const ScreenAlertAggregator = ({
             const { childConfigs, ...props } = taxReturnWarning.props;
 
             return (
-              <TaxReturnAlert {...props} collectionId={collectionId} key={buildAlertKey(taxReturnWarning)}>
+              <TaxReturnAlert {...props as any} collectionId={collectionId} key={buildAlertKey(taxReturnWarning)}>
                 {childConfigs?.map((childConfig) => {
                   return (
                     <RenderedScreenContent

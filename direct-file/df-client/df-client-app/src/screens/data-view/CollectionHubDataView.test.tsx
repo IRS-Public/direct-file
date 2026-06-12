@@ -23,6 +23,7 @@ import { baseFilerData, primaryFilerId, makeInterestReportData } from '../../tes
 import CollectionHubDataView from './CollectionHubDataView.js';
 import { initI18n } from '../../i18n.js';
 import { setupStore } from '../../redux/store.js';
+import { vi } from 'vitest';
 
 const intReportId1 = `9d164507-0c5a-469d-8d36-49d2f7af0b7a`;
 const intReportId2 = `24aa5dee-e381-4927-a0d9-07658287086c`;

@@ -533,10 +533,13 @@ export function SubSubCategory({
 
   const allAssertions = availableScreens
     .flatMap((sc) =>
-      sc.content.filter(
-        (c) =>
-          conditionsPass(c.props, factGraph, collectionId) &&
-          (c.componentName === `FactAssertion` || c.componentName === `FactResultAssertion`)
+      sc.content.filter((c) =>
+        {
+          return (
+            conditionsPass(c.props, factGraph, collectionId) &&
+            (c.componentName === `FactAssertion` || c.componentName === `FactResultAssertion`)
+          )
+        }
       )
     )
     .filter((result) => result);

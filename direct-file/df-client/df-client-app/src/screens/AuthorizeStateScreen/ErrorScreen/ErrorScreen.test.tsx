@@ -5,6 +5,7 @@ import { SystemAlertContextProvider } from '../../../context/SystemAlertContext/
 import { store } from '../../../redux/store.js';
 import { Provider } from 'react-redux';
 import { wrapComponent } from '../../../test/helpers.js';
+import { vi } from 'vitest';
 
 const handleGoBack = vi.fn();
 const errorMessage = `Details about an error!`;

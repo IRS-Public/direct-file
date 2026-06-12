@@ -1,5 +1,6 @@
 import { Path } from '../fact-dictionary/Path.js';
 import { useEnumOptions } from './useEnumOptions.js';
+import { vi } from 'vitest';
 
 const mockFactGraph = vi.hoisted(() => {
   const getOptionsPathForEnum = vi.fn();

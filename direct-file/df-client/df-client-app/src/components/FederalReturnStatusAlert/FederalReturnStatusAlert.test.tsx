@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { beforeAll, afterAll } from 'vitest';
 import { MEF_REJECTION_ERROR_CODES } from '../../constants/rejectionConstants.js';
 import { FactGraphContextProvider } from '../../factgraph/FactGraphContext.js';
+import { vi } from 'vitest';
 
 const { t } = vi.hoisted(() => {
   return {

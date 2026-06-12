@@ -2,6 +2,7 @@ import { renderHook, act } from '@testing-library/react';
 import useNetworkConnectionStatus from './useNetworkConnectionStatus.js';
 import App from '../App.js';
 import { renderWithTranslationProvider } from '../test/test-utils.js';
+import { vi } from 'vitest';
 
 const intervalTime = 50;
 const initialStatus = { online: true, prevOnlineStatus: true };
