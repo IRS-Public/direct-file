@@ -335,6 +335,17 @@ Most of the project dependencies can be installed using [SDKMAN!](https://sdkman
         docker compose up -d
         ```
 
+2. If you have issues starting direct-file-db, state-api-db, and email-service-db, this can be fixed by setting the correct ownership on the data folders
+   1. This can be confirmed by checking the container logs and seeing the following errors: 
+      <br/> `chown: cannot read directory '/var/lib/postgresql/data': Permission denied`
+      <br/> `chmod: changing permissions of '/var/lib/postgresql/data': Operation not permitted`
+
+        ```sh
+        chown -R 999:999 ./docker/db/postgres
+        chown -R 999:999 ./state-api/docker/db/postgres
+        chown -R 999:999 ./email-service/docker/db/postgres
+        ```
+
 #### Resources
 
 That's it!
@@ -370,15 +381,15 @@ Some quick links:
 
 Use Docker to build database containers and AWS mock services (referred to as "localstack")
 
-    ```sh
-    docker compose up -d db mef-apps-db localstack
-    ```
+ ```sh
+ docker compose up -d db mef-apps-db localstack
+ ```
 
 The command below will display all running containers and can be used to validate the above command was successful
 
-    ```shell
-    docker ps
-    ```
+ ```shell
+ docker ps
+ ```
 
 If successful, you should see three images running: localstack, direct-file-mef-apps-db, and direct-file-db.
 
