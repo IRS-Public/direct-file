@@ -738,14 +738,14 @@
     </Fact>
 
     <Fact path="/writableHasAdvancedPtc">
-      <Description>(Writable) Whether the TP has recieved advaned payments of the PTC</Description>
+      <Description>(Writable) Whether the TP has received advanced payments of the PTC</Description>
       <Writable>
         <Boolean />
       </Writable>
     </Fact>
 
     <Fact path="/hasAdvancedPtc">
-      <Description>Whether the TP has recieved advaned payments of the PTC</Description>
+      <Description>Whether the TP has received advanced payments of the PTC</Description>
       <Derived>
         <Switch>
           <Case>

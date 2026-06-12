@@ -108,7 +108,7 @@ describe(`Taxable social security benefits`, () => {
       });
       expect(factGraph.get(Path.concretePath(`/taxableSocialSecurityBenefits`, null)).get.toString()).toBe(`0.00`);
     });
-    it(`Starts getting taxed when there is other income in addition to social security income above a threshhold`, ({
+    it(`Starts getting taxed when there is other income in addition to social security income above a threshold`, ({
       task,
     }) => {
       task.meta.testedFactPaths = [`/taxableSocialSecurityBenefits`];
@@ -197,7 +197,7 @@ describe(`Taxable social security benefits`, () => {
       });
       expect(factGraph.get(Path.concretePath(`/taxableSocialSecurityBenefits`, null)).get.toString()).toBe(`0.00`);
     });
-    it(`Starts getting taxed when there is other income in addition to social security income above a threshhold`, ({
+    it(`Starts getting taxed when there is other income in addition to social security income above a threshold`, ({
       task,
     }) => {
       task.meta.testedFactPaths = [`/taxableSocialSecurityBenefits`];

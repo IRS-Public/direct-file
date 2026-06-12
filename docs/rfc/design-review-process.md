@@ -1,6 +1,6 @@
 # Design and a11y review process
 
- The below steps are specifically the design and accessibility testing part of the overall acceptance flow process. The code submitter should have done their due dilligence for any user interface changes so that a design/a11y reviewer can focus on finer details. Although there are several steps, if we do this regularly it will be a light lift and will avoid any design/a11y debt.
+ The below steps are specifically the design and accessibility testing part of the overall acceptance flow process. The code submitter should have done their due diligence for any user interface changes so that a design/a11y reviewer can focus on finer details. Although there are several steps, if we do this regularly it will be a light lift and will avoid any design/a11y debt.
 
 ## Verify that any changes match the design intention
 

@@ -61,7 +61,7 @@ export const isBeforeStdDeadline = (now: Date) => {
   return currentTime < DAY_WHEN_UNABLE_TO_FILE_FEDERAL.getTime();
 };
 
-export const isPostDeadlineButBeforeMassachussetsDeadline = (now: Date) => {
+export const isPostDeadlineButBeforeMassachussettsDeadline = (now: Date) => {
   const currentTime = now.getTime();
   return currentTime >= DAY_WHEN_UNABLE_TO_FILE_FEDERAL.getTime() && currentTime < DAY_WHEN_UNABLE_TO_FILE_MA.getTime();
 };

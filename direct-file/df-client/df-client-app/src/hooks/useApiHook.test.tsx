@@ -316,7 +316,7 @@ describe(`GET /taxreturns`, () => {
       throw new ReadError(`Response was not successful`, 501);
     });
 
-    // Because we already succesfully rendered once in a previous spec, we won't automatically refresh
+    // Because we already successfully rendered once in a previous spec, we won't automatically refresh
     // returns.
     store.dispatch(fetchTaxReturns());
     await act(async () => {
@@ -404,7 +404,7 @@ describe(`save()`, () => {
     }
   });
 
-  test(`error responses with an apiErrorKey are returned and considered translateable`, async () => {
+  test(`error responses with an apiErrorKey are returned and considered translatable`, async () => {
     fakeFetch.mockResolvedValue(
       createFetchResponse({
         status: 404,

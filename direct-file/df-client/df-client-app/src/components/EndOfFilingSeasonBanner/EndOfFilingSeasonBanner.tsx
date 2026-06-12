@@ -3,7 +3,7 @@ import { Alert } from '@trussworks/react-uswds';
 import {
   isBeforeStdDeadline,
   isPostStateFilingDeadline,
-  isPostDeadlineButBeforeMassachussetsDeadline,
+  isPostDeadlineButBeforeMassachussettsDeadline,
   isBeforeResubmissionDeadline,
 } from '../../utils/dateUtils.js';
 import { useContext, useMemo } from 'react';
@@ -76,7 +76,7 @@ export const getBannerI18nKeys = (
   } else if (isBeforeStdDeadline(now)) {
     headingI18nKey = `banner.endOfFilingSeason.headingBeforeStdDeadline`;
     bodyI18nKey = `banner.endOfFilingSeason.contentBase`;
-  } else if (isPostDeadlineButBeforeMassachussetsDeadline(now)) {
+  } else if (isPostDeadlineButBeforeMassachussettsDeadline(now)) {
     headingI18nKey = `banner.endOfFilingSeason.headingBeforeMaDeadline`;
     bodyI18nKey = `banner.endOfFilingSeason.contentBase`;
   } else if (isPostStateFilingDeadline(now)) {

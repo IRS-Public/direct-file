@@ -213,7 +213,7 @@ export const SubmitSubcategory = (
         i18nKey='/info/complete/sign-and-submit/tax-owed-pay-later-after-tax-day'
         conditions={[`/owesBalance`, { operator: `isFalse`, condition: `/payViaAch` }, `/isAfterTaxDay`]}
       />
-      {/* // Todo: SOT seems to imply this will route to the dashboard - is that really synonomous with Exit? */}
+      {/* // Todo: SOT seems to imply this will route to the dashboard - is that really synonymous with Exit? */}
       {/* <ExitButton condition={{ operator: `isFalse`, condition: `/hasStateFilingIntegration` }} /> */}
     </Screen>
   </Subcategory>

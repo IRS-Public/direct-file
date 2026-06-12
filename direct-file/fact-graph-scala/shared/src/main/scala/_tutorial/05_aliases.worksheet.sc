@@ -9,7 +9,7 @@ import java.util.UUID
 //
 // In the last chapter, we described Collections and CollectionItems as Facts
 // with special properties. In this chapter, we'll explore some more of those
-// special proprties, and also look at how we can operate on Collections and
+// special properties, and also look at how we can operate on Collections and
 // CollectionItems same as we would any other Fact.
 //
 // As we often do, let's start by building a FactDictionary with some examples.

@@ -724,7 +724,7 @@
     </Fact>
     <Fact path="/formW2s/*/hasSeenLastAvailableScreen">
       <Name>Has Seen last available screen</Name>
-      <Description>Whether the user has seen the last available scren for this W2.</Description>
+      <Description>Whether the user has seen the last available screen for this W2.</Description>
       <Export downstreamFacts="true" />
 
       <Writable>
@@ -1440,7 +1440,7 @@
     </Fact>
 
     <Fact path="/maxMedicareWagesForAnyFilerOnReturn">
-      <Description>The highest medicare wages a single person on the return recieved</Description>
+      <Description>The highest medicare wages a single person on the return received</Description>
       <Derived>
         <GreaterOf>
           <Dependency path="/primaryFilerMedicareWages" />
@@ -5518,7 +5518,7 @@
 
     <Fact path="/flowKnockoutBox15IncomeFromDifferentState">
       <Name>Flow Knockout Income from Unsupported State</Name>
-      <Description>Used to control a knockout for if the filer recieved income from an unsupported
+      <Description>Used to control a knockout for if the filer received income from an unsupported
         state.</Description>
       <Export downstreamFacts="true" />
 
@@ -5537,7 +5537,7 @@
     </Fact>
 
     <Fact path="/formW2s/*/hasKnockoutBox15IncomeFromDifferentState">
-      <Name>Has Knockout recieved Income from a Different State</Name>
+      <Name>Has Knockout received Income from a Different State</Name>
       <Description>Checks to see if their income is from a different state.</Description>
 
       <Derived>

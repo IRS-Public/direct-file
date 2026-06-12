@@ -43,7 +43,7 @@ status:
   root-translation-key: status
   translation-key-splitter: .
   ack-poll-in-milliseconds: 60000
-  # this field controls whether a Pending Response is returned from the /status endpoint when no submisionId is found.
+  # this field controls whether a Pending Response is returned from the /status endpoint when no submissionId is found.
   # we will want to disable this in the future (likely when SQS communication is enabled).
   status-endpoint-returns-pending-by-default-enabled: true
   status-polling-enabled: true

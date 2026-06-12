@@ -90,7 +90,7 @@ graph.get("/factC")
 // refund owed or balance due. There will be a set of tax credits for which we
 // have not yet determined the taxpayer's eligibility. In this case, it would be
 // far better to assume the taxpayer is ineligible until we can conclusively
-// prove their eligibility, rather than presuming eligilibity and taking credits
+// prove their eligibility, rather than presuming eligibility and taking credits
 // away from the taxpayer one by one.
 //
 // Conversely, we might imagine a Fact that represents whether the taxpayer's
@@ -141,7 +141,7 @@ graph.save()
 
 graph.get("/conclusion")
 
-// Unsuprisingly, the value is false. But more significantly, despite fact C
+// Unsurprisingly, the value is false. But more significantly, despite fact C
 // still being missing, the result is now complete. This makes sense if we think
 // about whether the value of fact C could affect the result. Now that fact B is
 // false, the value of fact C no longer matters; no matter what, the children of

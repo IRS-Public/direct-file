@@ -75,7 +75,7 @@ describe(`Relationship tests`, () => {
       relationship: `otherDescendantOfSibling`,
       relationshipOptionName: `otherDescendantOfSibling`,
       qc: true,
-      // this is correct -- pub 501 specifies only a sibiling's son or daughter. Nothing further.
+      // this is correct -- pub 501 specifies only a sibling's son or daughter. Nothing further.
       qrWithoutMemberOfHousehold: false,
       marriedHohQp: false,
       xmlName: `NEPHEW`,
@@ -103,7 +103,7 @@ describe(`Relationship tests`, () => {
       relationship: `otherDescendantOfHalfSibling`,
       relationshipOptionName: `otherDescendantOfHalfSibling`,
       qc: true,
-      qrWithoutMemberOfHousehold: false, // this is correct -- pub 501 specifies only a half-sibiling's son or daughter.
+      qrWithoutMemberOfHousehold: false, // this is correct -- pub 501 specifies only a half-sibling's son or daughter.
       marriedHohQp: false,
       xmlName: `NEPHEW`,
     },
