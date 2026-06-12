@@ -47,7 +47,7 @@ Tests are different for each type of work, but are primarily written in [./direc
 Writing or editing knockouts requires you to create facts to prove or disprove something about a taxpayer's situation to knock them out because Direct File doesn't support their situation.
 
 This includes:
-* Figuring out the criteria for a knockout. This is often in the ticket and I encourage you to ask all teh questions
+* Figuring out the criteria for a knockout. This is often in the ticket and I encourage you to ask all the questions
 * Creating or using existing facts that support a knockout case
 * If you're adding a knockout to the flow, adding that in
 * Creating a knockout stub in the correct spot in the flow
