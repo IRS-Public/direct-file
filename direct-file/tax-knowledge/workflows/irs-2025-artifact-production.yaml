@@ -150,7 +150,7 @@ stages:
     outputs:
       - factgraph/federal/2025/*.yaml
       - draft patches for backend/src/main/resources/tax/*.xml
-      - draft patches for df-plan-service/src/main/resources/tax-plan/*.xml
+      - draft patches for tax-advisor/src/main/resources/tax-plan/*.xml
       - regenerated draft backend/src/main/resources/factgraphservice/xmlFactPaths
     gates:
       - generated_factgraph_artifacts_have_exact_source_refs

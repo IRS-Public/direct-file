@@ -5,7 +5,7 @@ This map answers which checked-in runtime resources are tax-source dependent and
 Inspected roots:
 
 - `backend/src/main/resources`
-- `df-plan-service/src/main/resources`
+- `tax-advisor/src/main/resources`
 
 The machine-readable map lives in `runtime-resources/direct-file-resource-map.yaml`.
 
@@ -16,7 +16,7 @@ The machine-readable map lives in `runtime-resources/direct-file-resource-map.ya
 | `backend/src/main/resources/tax/*.xml` | Direct | Generate draft patches from reviewed rules, source chunks, MeF material, and scenarios |
 | `backend/src/main/resources/pdf/<year>/<form>/<lang>/configuration.yml` | Direct | Generate draft PDF field maps with PDF extraction, source citations, fact-path matching, and review |
 | `backend/src/main/resources/factgraphservice/xmlFactPaths` | Derived | Regenerate mechanically from approved fact graph XML |
-| `df-plan-service/src/main/resources/tax-plan/*.xml` | Direct | Generate draft planning graph patches from reviewed rules and scenarios |
+| `tax-advisor/src/main/resources/tax-plan/*.xml` | Direct | Generate draft planning graph patches from reviewed rules and scenarios |
 | `backend/src/main/resources/data-import-gating-sample.json` | Indirect | Generate or validate from evidence maps, conflicts, import support policy, and provider contracts |
 | `backend/src/main/resources/dataimportservice/mocks/*.json` | Indirect | Generate synthetic fixtures from reviewed scenarios and provider contracts |
 | `backend/src/main/resources/tax/FactDictionaryModule.rng` | Platform | Validate generated XML against it; do not generate from IRS sources |
@@ -24,7 +24,7 @@ The machine-readable map lives in `runtime-resources/direct-file-resource-map.ya
 
 ## Key Finding
 
-The pipeline can produce fact graph artifacts, but the current checked-in pipeline is still a draft-authoring pipeline. It creates source chunks, relevance classifications, rules, evidence maps, conflicts, scenarios, and fact graph work items. It does not yet emit final approved runtime files directly into `backend/src/main/resources/tax`, `backend/src/main/resources/pdf`, or `df-plan-service/src/main/resources/tax-plan`.
+The pipeline can produce fact graph artifacts, but the current checked-in pipeline is still a draft-authoring pipeline. It creates source chunks, relevance classifications, rules, evidence maps, conflicts, scenarios, and fact graph work items. It does not yet emit final approved runtime files directly into `backend/src/main/resources/tax`, `backend/src/main/resources/pdf`, or `tax-advisor/src/main/resources/tax-plan`.
 
 The correct next step is to add reviewed emitters that produce draft patches for those runtime files. Those emitters should never rely on IRS publications alone. They need the broader IRS corpus:
 
@@ -39,7 +39,7 @@ The correct next step is to add reviewed emitters that produce draft patches for
 Files:
 
 - `backend/src/main/resources/tax/*.xml`
-- `df-plan-service/src/main/resources/tax-plan/*.xml`
+- `tax-advisor/src/main/resources/tax-plan/*.xml`
 
 These are the main tax-source-dependent runtime artifacts. The backend currently has 36 tax XML modules, and the plan service has one planning XML module.
 
@@ -105,7 +105,7 @@ These resources should not be generated from IRS publications:
 - `backend/src/main/resources/logback*.xml`
 - `backend/src/main/resources/banner.txt`
 - `backend/src/main/resources/pmd/static-analysis-ruleset.xml`
-- `df-plan-service/src/main/resources/application*.yaml`
+- `tax-advisor/src/main/resources/application*.yaml`
 - `backend/src/main/resources/tax/FactDictionaryModule.rng`
 
 They may change to support the pipeline, but their authority is application architecture, not the IRS corpus.

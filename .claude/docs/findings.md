@@ -1,10 +1,10 @@
 # Findings ledger — production signal → finding → eval → fix
 
-Append-only record of the **self-improvement loop** for df-plan-service, adapted from the OpenAI/Thrive
+Append-only record of the **self-improvement loop** for tax-advisor, adapted from the OpenAI/Thrive
 "self-improving tax agents" pattern (production use → structured findings → tailored evals → scoped,
 human-reviewed fix). Newest last.
 
-**Why this exists.** df-plan-service is a deterministic fact-graph calculator, not a learned extraction
+**Why this exists.** tax-advisor is a deterministic fact-graph calculator, not a learned extraction
 agent, so we do **not** copy that loop wholesale (there is no field-extraction accuracy to climb, and we
 persist no taxpayer data). What *does* transfer: our "practitioners" are the **client-app team and tax
 SMEs**, our production signal is **how the client LLM uses the MCP tools** (and where it misuses them),

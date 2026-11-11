@@ -18,7 +18,7 @@ artifacts:
     topic_id: "self_employment"
     generated_files:
       - "backend/src/main/resources/tax/*.xml"
-      - "df-plan-service/src/main/resources/tax-plan/*.xml"
+      - "tax-advisor/src/main/resources/tax-plan/*.xml"
       - "backend/src/main/resources/factgraphservice/xmlFactPaths"
     fact_paths:
       inputs:
@@ -128,7 +128,7 @@ artifacts:
         change_type: "draft_or_update_fact"
         fact_path: "/seVehicleDeduction"
         rationale: "Business miles multiplied by the 2025 standard mileage rate."
-      - target: "df-plan-service/src/main/resources/tax-plan/*.xml"
+      - target: "tax-advisor/src/main/resources/tax-plan/*.xml"
         change_type: "draft_or_update_planning_fact"
         fact_path: "/seVehicleDeduction"
         rationale: "Planning graph target if the rule is in planning scope."

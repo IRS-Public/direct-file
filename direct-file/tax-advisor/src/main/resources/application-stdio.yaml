@@ -1,0 +1,21 @@
+spring:
+  # No HTTP listener when running as a subprocess of an MCP host
+  # (Claude Desktop, Cursor, etc.). Tool calls come in over stdin
+  # and responses go to stdout — anything written there must be the
+  # JSON-RPC stream only, so we also silence the banner and reroute
+  # Spring's own logs to a file.
+  main:
+    web-application-type: none
+    banner-mode: off
+  ai:
+    mcp:
+      server:
+        stdio: true
+
+# Spring Boot's logback config defaults to stdout. Force file-only logging
+# so the stdio MCP transport sees nothing but its own protocol frames.
+logging:
+  pattern:
+    console: ""
+  file:
+    name: ${user.home}/.tax-advisor/tax-advisor.log

@@ -15,7 +15,7 @@ is resolved, delete it (git history keeps the record).
 - **state-api `org.testcontainers:junit-jupiter` is declared but unused** — candidate for removal
   (the Testcontainers BOM is pinned in the parent pom regardless).
 
-## df-plan-service — tax modeling (MVP scope)
+## tax-advisor — tax modeling (MVP scope)
 
 - **QBI is the simple method only (Form 8995).** Above the filing-status threshold, Form 8995-A
   (SSTB / W-2-wage / UBIA limits) governs; the tool returns an upper bound and flags it. Not modeled:
@@ -43,7 +43,7 @@ is resolved, delete it (git history keeps the record).
 
 ## Harness / process (from the harness-engineering adoption)
 
-- **Eval harness is a first increment** — golden scenarios under `df-plan-service` cover the calc
+- **Eval harness is a first increment** — golden scenarios under `tax-advisor` cover the calc
   tools; expand coverage (more scenarios, edge cases, adversarial inputs) and consider a full-run
   multi-step library.
 - **Doc-gardening is manual.** The drift gate (`ToolDocumentationDriftTest`) catches the README tool

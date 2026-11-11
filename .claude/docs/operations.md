@@ -29,7 +29,7 @@ First-party artifacts resolve from local `~/.m2`, so install in dependency order
    ```
 4. **The service** you're working on:
    ```bash
-   cd direct-file/df-plan-service && mvn clean install
+   cd direct-file/tax-advisor && mvn clean install
    ```
 
 > If a build can't find `gov.irs:factgraph_3`, `gov.irs.directfile:loaders`,
@@ -51,12 +51,12 @@ mvn spotless:apply        # auto-format instead of hand-fixing
 mvn clean package         # the authoritative build (tests + all gates)
 ```
 
-## Running df-plan-service
+## Running tax-advisor
 
 Default (reactive WebFlux/Netty, Streamable HTTP on `:8090`):
 ```bash
-java -jar direct-file/df-plan-service/target/df-plan-service-0.0.1-SNAPSHOT.jar
-# or: cd direct-file/df-plan-service && ../backend/mvnw spring-boot:run
+java -jar direct-file/tax-advisor/target/tax-advisor-0.0.1-SNAPSHOT.jar
+# or: cd direct-file/tax-advisor && ../backend/mvnw spring-boot:run
 ```
 - `DF_TAX_KNOWLEDGE_ROOT` (default `../tax-knowledge`) points at the YAML knowledge root.
 - Health: `GET /actuator/health` (also `/health/liveness`, `/health/readiness`). Only `health`
@@ -77,10 +77,10 @@ curl -X POST http://localhost:8090/mcp \
 
 stdio transport (subprocess of a desktop MCP host):
 ```bash
-java -jar .../df-plan-service-0.0.1-SNAPSHOT.jar --spring.profiles.active=stdio
+java -jar .../tax-advisor-0.0.1-SNAPSHOT.jar --spring.profiles.active=stdio
 ```
 - No HTTP listener; JSON-RPC over stdin/stdout. Application logs go to
-  `~/.df-plan-service/df-plan-service.log` (stdout stays JSON-RPC-only). Wire into Claude
+  `~/.tax-advisor/tax-advisor.log` (stdout stays JSON-RPC-only). Wire into Claude
   Desktop/Cursor via a `command: java` + `args: [-jar, …, --spring.profiles.active=stdio]` entry.
 
 ## Full local stack (Docker Compose)
@@ -104,7 +104,7 @@ Default host ports (overridable by env var; see the root `README.md` table):
 | external-service simulator | 5001 (`DF_EXTSVCSIM_PORT`) |
 | backend DB | 5432 (`DF_DB_PORT`) · state-api DB 5433 · submit/status DB 32768 |
 | Prometheus / Grafana | 9090 / 3030 |
-| df-plan-service | 8090 (standalone; not wired into the default compose file) |
+| tax-advisor | 8090 (standalone; not wired into the default compose file) |
 
 Infra containers: Postgres (per service), Redis, LocalStack (SQS/SNS/KMS), WireMock, OTel
 collector, Prometheus, Grafana.
@@ -114,7 +114,7 @@ collector, Prometheus, Grafana.
 - `submit/` and `status/` need proprietary **MeF SDK jars** absent from this repo — they won't
   fully build locally. Don't attribute their failures to your changes.
 - When you change the **parent POM**, the only services you can fully validate here are
-  `backend`, `state-api`, `email-service`, and `df-plan-service` (+ the `libs`). Build all of
+  `backend`, `state-api`, `email-service`, and `tax-advisor` (+ the `libs`). Build all of
   them, not just your target, because the parent is shared.
 - `spring-ai 2.0.0-M8` is a milestone resolved from Maven Central; if a clean `~/.m2` can't
   fetch it, the Spring milestone repo may need to be available.

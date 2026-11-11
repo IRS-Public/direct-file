@@ -7,7 +7,7 @@ state-integration, and (new) conversational tax-**planning** capabilities. A Rea
 client (`df-client/`) is the taxpayer UI.
 
 The Maven code lives one directory down, under `direct-file/`. Paths below are written
-relative to the repo root (e.g. `direct-file/df-plan-service/...`).
+relative to the repo root (e.g. `direct-file/tax-advisor/...`).
 
 Supplemental detail (read these before non-trivial work):
 - @.claude/docs/architecture.md — end-to-end design, service topology, the fact graph, the planning service, shared libs.
@@ -24,7 +24,7 @@ Supplemental detail (read these before non-trivial work):
   built on **JDK 26**. All Java services inherit one shared parent POM:
   `direct-file/boms/irs-spring-boot-starter-parent/pom.xml`.
 - The parent POM is **shared by every service** (backend, state-api, submit, status,
-  email-service, df-plan-service). A dependency/version change there ripples to all of
+  email-service, tax-advisor). A dependency/version change there ripples to all of
   them — when you touch it, you must consider every consumer, not just the one you care
   about. Validate as widely as you can build (see operations.md).
 - Dependency versions are centralized in the parent POM `<properties>` + `dependencyManagement`.
@@ -42,7 +42,7 @@ must change, call it out explicitly rather than quietly undoing it.
    the lightweight `org.springframework:spring-web` (for `HttpStatus`) + explicit
    `jackson-databind`, nothing more. Keep it that way.
 
-2. **df-plan-service is a reactive WebFlux app serving MCP over Streamable HTTP.**
+2. **tax-advisor is a reactive WebFlux app serving MCP over Streamable HTTP.**
    - Web stack: `spring-boot-starter-webflux` + `spring-ai-starter-mcp-server-webflux`
      (Netty, **not** Tomcat). If you see it boot on Tomcat, a servlet starter leaked onto
      the classpath (usually via a transitive dep) — fix the dep, don't force the type.
@@ -51,7 +51,7 @@ must change, call it out explicitly rather than quietly undoing it.
      two-endpoint HTTP+SSE (`/mcp/sse` + `/mcp/message`).
    - Streamable HTTP needs **spring-ai ≥ 2.0.0-M8** (the Boot 4-aligned line). 1.0.0 lacks it.
 
-3. **df-plan-service speaks Jackson 2, by an explicit bean.** Spring Boot 4 defaults JSON to
+3. **tax-advisor speaks Jackson 2, by an explicit bean.** Spring Boot 4 defaults JSON to
    **Jackson 3** (`tools.jackson...`), and no longer auto-configures a Jackson 2
    `com.fasterxml.jackson.databind.ObjectMapper`. The planning service must stay Jackson 2
    because the shared `data-models` `FactTypeWithItem` carries a Jackson 2 `JsonNode`, and
@@ -87,7 +87,7 @@ Full detail in operations.md; the essentials:
   -Dspotless.check.skip=true`, but the final build must pass them. Use `spotless:apply` to
   auto-format rather than hand-fixing.
 - **Always finish with the real build** (tests + analysis) before declaring done. For
-  df-plan-service also smoke-boot the jar and hit `/actuator/health` and the `/mcp`
+  tax-advisor also smoke-boot the jar and hit `/actuator/health` and the `/mcp`
   handshake — context-loading tests don't exercise the HTTP transport.
 
 ## Conventions

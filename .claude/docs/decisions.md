@@ -6,8 +6,8 @@ Newest last. Each entry: the decision, the reason, and the alternative rejected.
 
 ## Spring Boot 4.1 migration
 
-- **Jackson 2 `ObjectMapper` via an explicit bean in df-plan-service.** Boot 4 defaults JSON to
-  Jackson 3 (`tools.jackson`) and no longer auto-configures a Jackson 2 mapper. df-plan-service must
+- **Jackson 2 `ObjectMapper` via an explicit bean in tax-advisor.** Boot 4 defaults JSON to
+  Jackson 3 (`tools.jackson`) and no longer auto-configures a Jackson 2 mapper. tax-advisor must
   stay Jackson 2 because shared `data-models` `FactTypeWithItem` holds a Jackson 2 `JsonNode`.
   *Rejected:* migrating the service to Jackson 3 (would force changing the shared record).
 - **`jcl-over-slf4j` instead of the real commons-logging.** Spring Framework 7 dropped `spring-jcl`;
@@ -18,7 +18,7 @@ Newest last. Each entry: the decision, the reason, and the alternative rejected.
 - **Testcontainers BOM imported explicitly** in the parent pom (Boot 4 stopped managing it), pinned
   to the 1.x line because 2.0 dropped the `junit-jupiter` artifact state-api references.
 
-## df-plan-service MCP transport
+## tax-advisor MCP transport
 
 - **Reactive WebFlux + MCP Streamable HTTP (`/mcp`, Netty).** Single endpoint (spec 2025-03-26+),
   session via `Mcp-Session-Id`. *Rejected:* the older WebMVC HTTP+SSE two-endpoint transport.
@@ -41,7 +41,7 @@ Newest last. Each entry: the decision, the reason, and the alternative rejected.
   fields. *Trade-off:* tool outputs became camelCase + schema-backed (were snake_case `Map`); shared
   `ReadResult`/`ExplainResult` gained null-safe compact constructors.
 
-## df-plan-service tax modeling
+## tax-advisor tax modeling
 
 - **Tax constants are YAML data; calculations are declarative fact-graph XML.** Adding a year or
   tweaking a constant is data-only, no code change. Persister type codes are validated before
@@ -75,7 +75,7 @@ Newest last. Each entry: the decision, the reason, and the alternative rejected.
   `.claude/docs/`), not in external memory.
 - **Self-improvement loop, adapted (not copied) from the "self-improving tax agents" pattern.** The
   loop is: production signal → finding → eval → scoped fix (the fix half is a coding agent against the
-  build gates). We do NOT copy the extraction-agent version: df-plan-service is a deterministic
+  build gates). We do NOT copy the extraction-agent version: tax-advisor is a deterministic
   calculator (no field-accuracy to climb) that persists no taxpayer data (no rich production traces).
   So: (a) a `findings.md` ledger turns recurring client-app/transcript/SME signals into evals + fixes;
   (b) telemetry is **aggregate and PII-free** — a single AOP aspect (`ToolCallTelemetry`) on `@McpTool`

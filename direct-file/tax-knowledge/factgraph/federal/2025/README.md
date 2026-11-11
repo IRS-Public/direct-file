@@ -9,7 +9,7 @@ fact paths, generated scenarios, and regression results.
 Expected runtime targets include:
 
 - `backend/src/main/resources/tax/*.xml`
-- `df-plan-service/src/main/resources/tax-plan/*.xml`
+- `tax-advisor/src/main/resources/tax-plan/*.xml`
 - the derived index `backend/src/main/resources/factgraphservice/xmlFactPaths`
 
 Use `runtime-resources/direct-file-resource-map.yaml` to decide whether a target is directly source-dependent,

@@ -8,7 +8,7 @@ in sync deliberately. Start here, then follow the pointers.
 IRS Direct File: a multi-module monorepo for free, guided federal tax filing. Authoritative tax
 logic lives in a **fact graph** (a Scala 3 rules engine); Java Spring Boot services load it and
 expose filing, submission, status, email, state-integration, and conversational tax-**planning**
-(df-plan-service) capabilities. A React/Vite client (`df-client/`) is the taxpayer UI. The Maven
+(tax-advisor) capabilities. A React/Vite client (`df-client/`) is the taxpayer UI. The Maven
 code lives one directory down, under `direct-file/`.
 
 ## Sources of truth (read before non-trivial work)
@@ -16,10 +16,10 @@ code lives one directory down, under `direct-file/`.
 - **[CLAUDE.md](CLAUDE.md)** — platform baseline, the architecture invariants (below), build/test
   workflow, conventions, and the Spring Boot 4 migration cheat-sheet. The fullest guidance.
 - **[.claude/docs/architecture.md](.claude/docs/architecture.md)** — end-to-end design: service
-  topology, the fact graph, the df-plan-service deep dive, inter-service messaging.
+  topology, the fact graph, the tax-advisor deep dive, inter-service messaging.
 - **[.claude/docs/operations.md](.claude/docs/operations.md)** — toolchain, build order, running
   services and MCP transports, profiles/ports, Docker, buildability caveats.
-- **Per-service `README.md`** (e.g. [direct-file/df-plan-service/README.md](direct-file/df-plan-service/README.md))
+- **Per-service `README.md`** (e.g. [direct-file/tax-advisor/README.md](direct-file/tax-advisor/README.md))
   — the local source of truth for that service, including its MCP tool inventory.
 - **[.claude/docs/decisions.md](.claude/docs/decisions.md)** — why non-obvious choices were made
   (the rationale that would otherwise be lost in chat threads).
@@ -34,9 +34,9 @@ not a review. When in doubt, prefer enforcing a rule in code over restating it i
 1. **Libraries stay un-opinionated about app type.** `libs/*` must not depend on a web stack
    (`spring-boot-starter-web` / `-webmvc` / `-webflux`). Enforced by
    `WebStackFreeConstraintTest` in `libs/data-models`.
-2. **df-plan-service is reactive WebFlux serving MCP over Streamable HTTP** (`/mcp`, Netty) — never
+2. **tax-advisor is reactive WebFlux serving MCP over Streamable HTTP** (`/mcp`, Netty) — never
    reintroduce the servlet stack or the old HTTP+SSE two-endpoint transport.
-3. **df-plan-service speaks Jackson 2 via an explicit bean** (`config/JacksonConfig`); Boot 4
+3. **tax-advisor speaks Jackson 2 via an explicit bean** (`config/JacksonConfig`); Boot 4
    defaults JSON to Jackson 3.
 4. **stdio MCP transport needs clean stdout** — `jcl-over-slf4j` substitutes for the real
    commons-logging so its output doesn't corrupt the JSON-RPC stream.

@@ -2,7 +2,7 @@ map_id: direct_file_runtime_resource_dependency_map
 status: draft
 scope:
   backend_resources: backend/src/main/resources
-  plan_service_resources: df-plan-service/src/main/resources
+  plan_service_resources: tax-advisor/src/main/resources
   inspected_on: 2026-05-26
 
 resource_groups:
@@ -129,11 +129,11 @@ resource_groups:
 
   - group_id: plan_service_tax_plan_modules
     paths:
-      - df-plan-service/src/main/resources/tax-plan/*.xml
+      - tax-advisor/src/main/resources/tax-plan/*.xml
     current_inventory:
       count: 1
       examples:
-        - df-plan-service/src/main/resources/tax-plan/selfEmployment.xml
+        - tax-advisor/src/main/resources/tax-plan/selfEmployment.xml
     source_dependency: direct
     generation_feasibility: partial
     authoritative_inputs:
@@ -148,7 +148,7 @@ resource_groups:
       - factgraph/federal/<tax-year>/*.yaml
       - scenarios/federal/<tax-year>/*.yaml
     pipeline_outputs:
-      - draft patches for df-plan-service/src/main/resources/tax-plan/*.xml
+      - draft patches for tax-advisor/src/main/resources/tax-plan/*.xml
       - source-backed planning scenarios
     human_review:
       - domain specialist for the planning topic
@@ -237,12 +237,12 @@ resource_groups:
       - backend/src/main/resources/logback*.xml
       - backend/src/main/resources/banner.txt
       - backend/src/main/resources/pmd/static-analysis-ruleset.xml
-      - df-plan-service/src/main/resources/application*.yaml
+      - tax-advisor/src/main/resources/application*.yaml
     current_inventory:
       examples:
         - backend/src/main/resources/application.yaml
         - backend/src/main/resources/logback.xml
-        - df-plan-service/src/main/resources/application.yaml
+        - tax-advisor/src/main/resources/application.yaml
     source_dependency: none
     generation_feasibility: not_generated
     authoritative_inputs:

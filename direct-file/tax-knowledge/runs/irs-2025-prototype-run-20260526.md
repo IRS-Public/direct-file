@@ -47,7 +47,7 @@ Scope: seed federal individual-income publication list in `corpora/irs-2025/publ
    - Selected source refs are now weighted toward the rule's declared source products: `p334` and `p463`
    - Runtime targets identified:
      - `backend/src/main/resources/tax/*.xml`
-     - `df-plan-service/src/main/resources/tax-plan/*.xml`
+     - `tax-advisor/src/main/resources/tax-plan/*.xml`
      - `backend/src/main/resources/factgraphservice/xmlFactPaths`
 
 6. Provenance validation

@@ -29,7 +29,7 @@ PostgreSQL schema. Submission to the IRS goes through the **MeF** (Modernized e-
       └──────────────┘                          └──────────────────────────────┘
 
       ┌──────────────────────────────────────────────────────────────────────┐
-      │ df-plan-service :8090 — conversational tax-PLANNING MCP server (new).  │
+      │ tax-advisor :8090 — conversational tax-PLANNING MCP server (new).  │
       │ Reuses the fact graph; not part of the filing critical path.          │
       └──────────────────────────────────────────────────────────────────────┘
 ```
@@ -47,9 +47,9 @@ PostgreSQL schema. Submission to the IRS goes through the **MeF** (Modernized e-
 | `status/` | Consumes MeF acknowledgements, tracks submission/acknowledgement state, publishes status changes. Also MeF-SDK-dependent. |
 | `state-api/` | Serves exported tax facts to state agencies; JWT-authenticated; Postgres + Redis. |
 | `email-service/` | Sends transactional email; consumes email messages off the queue; own Postgres. |
-| `df-plan-service/` | **Tax-planning MCP server** (deep dive below). |
+| `tax-advisor/` | **Tax-planning MCP server** (deep dive below). |
 | `df-client/` | React + Vite + TypeScript taxpayer UI. |
-| `tax-knowledge/` | YAML knowledge artifacts (topics, evidence maps, conflict rules, citations, year-indexed tax parameters) consumed by df-plan-service. |
+| `tax-knowledge/` | YAML knowledge artifacts (topics, evidence maps, conflict rules, citations, year-indexed tax parameters) consumed by tax-advisor. |
 | `config/`, `docker/`, `monitoring/`, `scripts/` | Shared config, Docker assets, Prometheus/Grafana/OTel, helper scripts. |
 
 The fact graph engine itself (`gov.irs:factgraph_3`, Scala 3) is a **separate repo** published
@@ -66,13 +66,13 @@ facts via declarative rules in the XML.
 Operational notes that bite:
 - Serialization is **Scala uPickle**. A fact persisted with an unknown `$type` tag causes a
   hard `upickle.core.Abort: invalid tag for tagged object` deep in the engine. Validate
-  type codes **before** they reach the graph (df-plan-service does this in `set_fact`).
+  type codes **before** they reach the graph (tax-advisor does this in `set_fact`).
 - The engine is partly **lazy** — a bad value may not blow up until `save()`/`get()`, not at
   graph construction. Wrap mutations so failures roll back (see `PlanningGraphService.writeFact`).
 - Numbers come back as engine types (e.g. a `Rational` renders `"n/d"`); coerce explicitly
   when a plain `BigDecimal` is needed.
 
-## 4. df-plan-service (deep dive — the actively developed service)
+## 4. tax-advisor (deep dive — the actively developed service)
 
 Purpose: a **conversational tax-planning** backend for self-employed/gig filers. It extends
 the production fact dictionary with planning facts (`tax-plan/*.xml`) and exposes **MCP tools**
@@ -80,7 +80,7 @@ that an LLM gateway calls to drive an interview → estimate flow. It is **not**
 critical path and keeps no durable taxpayer data — planning sessions live in memory only.
 
 Key types:
-- `PlanServiceApplication` — Spring Boot entry point.
+- `TaxAdvisorApplication` — Spring Boot entry point.
 - `graph/PlanningGraphService` — loads the combined dictionary (production `tax/*.xml` +
   planning `tax-plan/*.xml`) once at startup; hands out per-session in-memory `Graph`s; owns
   `writeFact`/`readFact`. Each session = a `UUID` + a `LinkedHashMap<path, FactTypeWithItem>`,
@@ -101,7 +101,7 @@ Key types:
   them (no `MethodToolCallbackProvider`). Filing-status-dependent constants are status-scoped
   `*-tax-parameters.yaml` rows (a `filing_status` field) injected only for the session's status.
 - `config/JacksonConfig` — the explicit Jackson 2 `ObjectMapper` bean (CLAUDE.md invariant 3).
-- `config/PlanServiceProperties` — `df-plan.*` config (tax-knowledge root, fact XML patterns).
+- `config/TaxAdvisorProperties` — `tax-advisor.*` config (tax-knowledge root, fact XML patterns).
 
 Transports (two profiles, same tools):
 - **default** — reactive WebFlux/Netty, **Streamable HTTP** at `POST/GET /mcp` (spec 2025-03-26+),

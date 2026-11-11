@@ -89,7 +89,7 @@ Map backend runtime resources to source dependencies before drafting implementat
 less tax-knowledge/RUNTIME_RESOURCE_DEPENDENCY_MAP.md
 ```
 
-The structured map is `tax-knowledge/runtime-resources/direct-file-resource-map.yaml`. It identifies which files under `backend/src/main/resources` and `df-plan-service/src/main/resources` are direct IRS-corpus generation targets, derived indexes, indirectly tax-dependent fixtures, or non-tax infrastructure.
+The structured map is `tax-knowledge/runtime-resources/direct-file-resource-map.yaml`. It identifies which files under `backend/src/main/resources` and `tax-advisor/src/main/resources` are direct IRS-corpus generation targets, derived indexes, indirectly tax-dependent fixtures, or non-tax infrastructure.
 
 Optional extraction sanity check:
 

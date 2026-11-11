@@ -92,7 +92,7 @@ Output:
 - `RUNTIME_RESOURCE_DEPENDENCY_MAP.md`
 
 Automation:
-- Inventory `backend/src/main/resources` and `df-plan-service/src/main/resources`.
+- Inventory `backend/src/main/resources` and `tax-advisor/src/main/resources`.
 - Mark each resource group as direct IRS-corpus dependent, indirectly tax-dependent, derived, platform-only, or non-tax infrastructure.
 
 Human check:
@@ -128,7 +128,7 @@ The `rule-modeling-agent` and `release-agent` draft fact graph XML, validation X
 Output:
 - `factgraph/<jurisdiction>/<tax-year>/*.yaml`
 - draft patches for `backend/src/main/resources/tax/*.xml`
-- draft patches for `df-plan-service/src/main/resources/tax-plan/*.xml`
+- draft patches for `tax-advisor/src/main/resources/tax-plan/*.xml`
 - regenerated draft `backend/src/main/resources/factgraphservice/xmlFactPaths`
 
 Automation:

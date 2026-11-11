@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * ({@code spring-boot-starter-web} / {@code -webmvc}) or a reactive one ({@code -webflux}), it drags
  * {@code DispatcherServlet} / {@code DispatcherHandler} / an embedded servlet container onto every
  * consumer's classpath. That forces Spring Boot's web-application-type detection and silently breaks
- * reactive apps — df-plan-service (WebFlux + Streamable HTTP MCP) hit exactly this and booted on
+ * reactive apps — tax-advisor (WebFlux + Streamable HTTP MCP) hit exactly this and booted on
  * Tomcat with a dead {@code /mcp} router until the leaked starter was removed.
  *
  * <p>The lightweight {@code org.springframework:spring-web} jar that data-models legitimately depends

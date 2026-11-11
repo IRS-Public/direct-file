@@ -314,7 +314,7 @@ def draft_changes_for_rule(rule: RuleModel) -> list[dict[str, Any]]:
         )
         changes.append(
             {
-                "target": "df-plan-service/src/main/resources/tax-plan/*.xml",
+                "target": "tax-advisor/src/main/resources/tax-plan/*.xml",
                 "change_type": "draft_or_update_planning_fact",
                 "fact_path": rule.output,
                 "rationale": "Planning graph target if the rule is in planning scope.",
@@ -344,7 +344,7 @@ def generate_work_items(args: argparse.Namespace) -> dict[str, Any]:
                 "topic_id": rule.topic_id,
                 "generated_files": [
                     "backend/src/main/resources/tax/*.xml",
-                    "df-plan-service/src/main/resources/tax-plan/*.xml",
+                    "tax-advisor/src/main/resources/tax-plan/*.xml",
                     "backend/src/main/resources/factgraphservice/xmlFactPaths",
                 ],
                 "fact_paths": {

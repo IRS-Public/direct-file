@@ -15,7 +15,7 @@
     <name>Direct File Fact-Dictionary Loaders</name>
     <description>Library containing the XML fact-dictionary loader and the
         Java-side FactConfig implementations of the Scala fact-graph traits.
-        Extracted from backend/ so other services (df-plan-service, future
+        Extracted from backend/ so other services (tax-advisor, future
         tooling) can load and operate on the fact graph without depending
         on the backend's Spring Boot fat jar.</description>
 
@@ -28,7 +28,7 @@
         </dependency>
 
         <!-- FactTypeWithItem / FactEvaluationResult / EvaluatedFactInfo are
-             shared with backend, df-plan-service, and the submit/status pipeline. -->
+             shared with backend, tax-advisor, and the submit/status pipeline. -->
         <dependency>
             <groupId>gov.irs.directfile</groupId>
             <artifactId>data-models</artifactId>

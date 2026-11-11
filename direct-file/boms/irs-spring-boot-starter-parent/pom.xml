@@ -38,7 +38,7 @@
              references. -->
         <testcontainers.version>1.21.3</testcontainers.version>
         <!-- Spring AI 2.0.x is the Spring Boot 4 / Spring Framework 7-aligned line and carries
-             the MCP Streamable HTTP transport (protocol=STREAMABLE) that df-plan-service's MCP
+             the MCP Streamable HTTP transport (protocol=STREAMABLE) that tax-advisor's MCP
              server uses. 2.0.0 is currently a milestone (M8). -->
         <spring-ai.version>2.0.0-M8</spring-ai.version>
         <logstash.version>9.0</logstash.version>

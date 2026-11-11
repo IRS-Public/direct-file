@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>gov.irs.directfile.boot</groupId>
+        <artifactId>irs-spring-boot-starter-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../boms/irs-spring-boot-starter-parent</relativePath>
+    </parent>
+
+    <groupId>com.realworld.tax</groupId>
+    <artifactId>tax-advisor</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Tax Advisor</name>
+    <description>Tax-planning agent backend: extends the fact graph with self-employment
+        facts and exposes MCP tools (get_fact, set_fact, explain, estimate_quarterly_payment)
+        that an LLM gateway can call to drive a conversational tax-planning experience.</description>
+
+    <properties>
+        <config-folder.path>${project.basedir}/../config</config-folder.path>
+    </properties>
+
+    <dependencies>
+        <!-- Fact graph engine, standalone repo (Scala 3 artifact published as
+             gov.irs:factgraph_3:3.1.0-SNAPSHOT by `make publish` in the
+             /fact-graph repo). -->
+        <dependency>
+            <groupId>gov.irs</groupId>
+            <artifactId>factgraph_3</artifactId>
+        </dependency>
+
+        <!-- Shared XML loader + digest types + FactConfig impl. Extracted from
+             backend/ into libs/loaders/ so this service can load fact-dictionary
+             XML identically to production without depending on the backend's
+             Spring Boot fat jar. -->
+        <dependency>
+            <groupId>gov.irs.directfile</groupId>
+            <artifactId>loaders</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>gov.irs.directfile</groupId>
+            <artifactId>data-models</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--
+            AOP, for the tool-call telemetry aspect (ToolCallTelemetry): a single @Around
+            advice on @McpTool methods records a PII-free {tool, outcome, errorClass} signal
+            to Micrometer + a structured log, so client-side tool MISUSE is visible without
+            persisting any taxpayer data. Boot 4 canonical artifact is -aspectj (was -aop).
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aspectj</artifactId>
+        </dependency>
+
+        <!--
+            Spring AI MCP server (reactive/WebFlux). This starter serves the Streamable
+            HTTP transport (single /mcp endpoint, spec 2025-03-26+) when
+            `spring.ai.mcp.server.protocol=STREAMABLE`, and transitively pulls in the
+            core mcp-server starter (which carries STDIO support), so we only need this
+            one declaration. STDIO is enabled at runtime via
+            `spring.ai.mcp.server.stdio=true` in application-stdio.yaml.
+        -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-mcp-server-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- jackson-core/databind arrive transitively via spring-boot-starter-webflux;
+             only jackson-dataformat-yaml needs an explicit declaration. -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Spring Framework 7 (Boot 4) dropped spring-jcl; spring-core now pulls the real
+             Apache commons-logging, which does its own log discovery and can write directly
+             to stdout — fatal for the stdio MCP transport (stdout must be JSON-RPC only).
+             Exclude that artifact from the fat jar (see spring-boot-maven-plugin below) and
+             provide the commons-logging API via jcl-over-slf4j instead, so JCL output is
+             funnelled through SLF4J/Logback and obeys the stdio file-only logging config. -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-annotations</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Keep the real Apache commons-logging out of the repackaged fat jar: it does its
+                 own log discovery and prints diagnostics straight to stdout on startup, which
+                 corrupts the stdio MCP transport (stdout must carry only JSON-RPC frames). The
+                 commons-logging API is supplied instead by jcl-over-slf4j (declared above), which
+                 routes through SLF4J/Logback and so respects the stdio file-only logging config.
+                 (Spring Framework 7 removed spring-jcl, which used to fill this role.) -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>commons-logging</groupId>
+                            <artifactId>commons-logging</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
